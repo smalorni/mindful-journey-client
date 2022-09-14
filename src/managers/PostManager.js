@@ -21,7 +21,7 @@ export const deletePost = (postId) => {
 }
 
 //Update Post
-export const updatePost = (post, postId) => {
+export const updateThePost = (post, postId) => {
     return fetch(`http://localhost:8000/posts/${postId}`, {
         method: "PUT",
         headers: {
@@ -34,10 +34,23 @@ export const updatePost = (post, postId) => {
 
 //Single Post
 export const getSinglePost = (postId) => {
-    return fetch(`http://localhost:8000/games/${postId}`, {
+    return fetch(`http://localhost:8000/posts/${postId}`, {
         headers: {
             "Authorization": `Token ${localStorage.getItem("meditator_token")}`
         }
      })
         .then(response => response.json())
 }
+
+//Create new post
+export const createPost = (post) => {
+    return fetch("http://localhost:8000/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        'Authorization': `Token ${localStorage.getItem('meditator_token')}`
+      },
+      body: JSON.stringify(post)
+    })
+      .then(res => res.json())
+  }

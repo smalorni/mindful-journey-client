@@ -1,38 +1,30 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { getAllCategories } from "../../managers/CategoryManager"
-import { getSinglePost, updateThePost } from "../../managers/PostManager"
+import { createPost } from "../../managers/PostManager"
 
-export const UpdatePost = () => {
-    const [ currentCategories, setCurrentCategories ] = useState([])
-    const { postId } = useParams()
+export const NewPost = () => {
+    const [ postCategories, setPostCategories ] = useState([])
     const navigate = useNavigate()
-    
-    const [ updatePost, setUpdatePost ] = useState({
+
+    const [ currentPost, setCurrentPost ] = useState({
         category: 1,
         title: "",
         content: "",
         meditator: 1
     })
 
-    //UseEffect to update a specific post
     useEffect(() => {
-        getSinglePost(postId).then(data => setUpdatePost(data))
-    }, 
-        [postId]
-    )
-
-    useEffect(() => {
-        getAllCategories().then(data => setCurrentCategories(data))
+        getAllCategories().then(data => setPostCategories(data))
     }, 
         []
     )
 
-    const [ updateUrlImage, setUpdateUrlImage ] = useState("")
+    const [ postUrlImage, setPostUrlImage ] = useState("")
     
-    const updatePostUrlImageString = (post) => {
+    const createPostUrlImageString = (post) => {
         getBase64(post.target.files[0], (base64ImageString) => {
-            setUpdateUrlImage(base64ImageString)
+            setPostUrlImage(base64ImageString)
         });
     }
 
@@ -42,33 +34,32 @@ export const UpdatePost = () => {
         reader.readAsDataURL(file);
     }
     
-    const updatePostState = (evt) => {
-        const copyPostUpdate = {...updatePost}
-        copyPostUpdate[evt.target.name] = evt.target.value
-        setUpdatePost(copyPostUpdate)
+    const changePostState = (evt) => {
+        const copyNewPost = {...currentPost}
+        copyNewPost[evt.target.name] = evt.target.value
+        setCurrentPost(copyNewPost)
     }
-
 
     return (
         <form className="newPostForm">
-            <h2 className="newPostForm__header">New Post</h2>
+            <h2 className="newPostForm__title">New Post</h2>
             
             <fieldset>
                 <div className="form-group">
                     <label>Title: </label>
                     <input type="text" name="title" required autoFocus className="form-control"
-                        value={updatePost.title}
-                        onChange={updatePostState} />
+                        value={currentPost.title}
+                        onChange={changePostState} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="category">Post Category: </label>
                     <select name="category"
-                        onChange={updatePostState} >
+                        onChange={changePostState} >
                             <option value="0">Select Category:</option>
                             {
-                                currentCategories.map(category => {
+                                postCategories.map(category => {
                                 return <option value={category.id} key={`category--${category.id}`}>{category.name}
                                 </option> 
                                 })
@@ -82,15 +73,15 @@ export const UpdatePost = () => {
                 <div className="form-group">
                     <label>Content: </label>
                     <input type="textarea" name="content" required autoFocus className="form-control"
-                        value={updatePost.content}
-                        onChange={updatePostState} />
+                        value={currentPost.content}
+                        onChange={changePostState} />
                 </div>
             </fieldset>
 
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="image_url">Image url: </label>
-                    <input type="file" id="url_image" onChange={updatePostUrlImageString} />
+                    <input type="file" id="url_image" onChange={createPostUrlImageString} />
                     
                 </div>
             </fieldset>
@@ -101,18 +92,18 @@ export const UpdatePost = () => {
                   onClick={evt => {
                     evt.preventDefault()
 
-                    const editPost = {
-                        title: updatePost.title,
-                        category: parseInt(updatePost.category),
-                        content: updatePost.content,
-                        meditator: parseInt(updatePost.meditator),
-                        post_image_url: updateUrlImage
+                    const newPost = {
+                        title: currentPost.title,
+                        category: parseInt(currentPost.category),
+                        content: currentPost.content,
+                        meditator: parseInt(currentPost.meditator),
+                        post_image_url: postUrlImage
                     }
                     // Send Post request to API
-                    updateThePost(editPost, postId)
+                    createPost(newPost)
                         .then(()=> navigate('/posts'))
                 }}
-                  className="update-button">Update</button>
+                  className="save-button">Save Post</button>
             </div>
             </div>
         </form>
