@@ -1,8 +1,8 @@
-//Managed all the fetch calls for posts
+//Managed all the fetch calls for events
 
-//Get list of posts
-export const getAllPosts = () => {
-    return fetch(`http://localhost:8000/posts`, {
+//Get list of events
+export const getAllEvents = () => {
+    return fetch(`http://localhost:8000/events`, {
         headers:{
             "Authorization": `Token ${localStorage.getItem("meditator_token")}`
         }
@@ -10,9 +10,9 @@ export const getAllPosts = () => {
         .then(response => response.json())
 }
 
-//Delete single post
-export const deletePost = (postId) => {
-    return fetch(`http://localhost:8000/posts/${postId}`, {
+//Delete single event
+export const deleteEvent = (eventId) => {
+    return fetch(`http://localhost:8000/events/${eventId}`, {
         method: "DELETE",
         headers: {
             "Authorization": `Token ${localStorage.getItem("meditator_token")}`
@@ -20,21 +20,21 @@ export const deletePost = (postId) => {
  })
 }
 
-//Update Post
-export const updateThePost = (post, postId) => {
-    return fetch(`http://localhost:8000/posts/${postId}`, {
+//Update Event
+export const updateTheEvent = (event, eventId) => {
+    return fetch(`http://localhost:8000/events/${eventId}`, {
         method: "PUT",
         headers: {
             "Authorization": `Token ${localStorage.getItem("meditator_token")}`,
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(post)
+        body: JSON.stringify(event)
     })
 }
 
-//Single Post
-export const getSinglePost = (postId) => {
-    return fetch(`http://localhost:8000/posts/${postId}`, {
+//Single Event
+export const getSingleEvent = (eventId) => {
+    return fetch(`http://localhost:8000/events/${eventId}`, {
         headers: {
             "Authorization": `Token ${localStorage.getItem("meditator_token")}`
         }
@@ -42,15 +42,15 @@ export const getSinglePost = (postId) => {
         .then(response => response.json())
 }
 
-//Create new post
-export const createPost = (post) => {
-    return fetch(`http://localhost:8000/posts`, {
+//Create new event
+export const createEvent = (event) => {
+    return fetch(`http://localhost:8000/events`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         'Authorization': `Token ${localStorage.getItem('meditator_token')}`
       },
-      body: JSON.stringify(post)
+      body: JSON.stringify(event)
     })
       .then(res => res.json())
   }
