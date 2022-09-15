@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { createEvent } from "../../managers/EventManager"
+import { updateTheEvent, getSingleEvent } from "../../managers/EventManager"
 
-export const NewEvent = () => {
+export const UpdateEvent = () => {
     const navigate = useNavigate()
+    const { eventId } = useParams()
 
-    const [ currentEvent, setCurrentEvent ] = useState({
+    const [ updateEvent, setUpdateEvent ] = useState({
         name: "",
         location: "",
         start_date: "2022-09-13",
@@ -16,15 +17,16 @@ export const NewEvent = () => {
         activity_level: 1,
     })
 
-    // useEffect(() => {
-    //     getAllEvents().then(data => setPostCategories(data))
-    // }, 
-    //     []
-    // )
+    //UseEffect to update a specific post
+    useEffect(() => {
+        getSingleEvent(eventId).then(data => setUpdateEvent(data))
+    }, 
+        [eventId]
+    )
 
     const [ eventUrlImage, setEventUrlImage ] = useState("")
     
-    const createEventUrlImageString = (event) => {
+    const updateEventUrlImageString = (event) => {
         getBase64(event.target.files[0], (base64ImageString) => {
             setEventUrlImage(base64ImageString)
         });
@@ -36,22 +38,22 @@ export const NewEvent = () => {
         reader.readAsDataURL(file);
     }
     
-    const changeEventState = (evt) => {
-        const copyNewEvent = {...currentEvent}
-        copyNewEvent[evt.target.name] = evt.target.value
-        setCurrentEvent(copyNewEvent)
+    const updateEventState = (evt) => {
+        const copyEventUpdate = {...updateEvent}
+        copyEventUpdate[evt.target.name] = evt.target.value
+        setUpdateEvent(copyEventUpdate)
     }
 
     return (
-        <form className="newEventForm">
-            <h2 className="newEventForm__title">New Event</h2>
+        <form className="updateEventForm">
+            <h2 className="updateEventForm__title">Update Event</h2>
             
             <fieldset>
                 <div className="form-group">
                 <label>Name of Event: </label>
                     <input type="text" name="name" required autoFocus className="form-control"
-                        value={currentEvent.name}
-                        onChange={changeEventState} />
+                        value={updateEvent.name}
+                        onChange={updateEventState} />
                 </div>
             </fieldset>
 
@@ -59,20 +61,22 @@ export const NewEvent = () => {
                 <div className="form-group">
                     <label>Location: </label>
                     <input type="text" name="location" required autoFocus className="form-control"
-                        value={currentEvent.location}
-                        onChange={changeEventState} />
+                        value={updateEvent.location}
+                        onChange={updateEventState} />
                 </div>
             </fieldset>
 
             <fieldset>
                 <div className="form-group">
                     <label>Date of Event: </label>
-                    <br></br> Start Date: <input type="date" name="start_date"
-                        value={currentEvent.start_date}
-                        onChange={changeEventState} />
-                    <br></br>End Date:<input type="date" name="end_date"
-                    value={currentEvent.end_date}
-                    onChange={changeEventState} />
+                    <br></br> 
+                    Start Date: <input type="date" name="start_date"
+                        value={updateEvent.start_date}
+                        onChange={updateEventState} />
+                        <br></br>
+                    End Date:<input type="date" name="end_date"
+                    value={updateEvent.end_date}
+                    onChange={updateEventState} />
                 </div>
             </fieldset>
 
@@ -80,8 +84,8 @@ export const NewEvent = () => {
                 <div className="form-group">
                     <label>Host's Name:</label>
                     <input type="text" name="host" required autoFocus className="form-control"
-                        value={currentEvent.host}
-                        onChange={changeEventState} />
+                        value={updateEvent.host}
+                        onChange={updateEventState} />
                 </div>
             </fieldset>
 
@@ -89,8 +93,8 @@ export const NewEvent = () => {
                 <div className="form-group">
                     <label>Description: </label>
                     <input type="textarea" name="description" required autoFocus className="form-control"
-                        value={currentEvent.description}
-                        onChange={changeEventState} />
+                        value={updateEvent.description}
+                        onChange={updateEventState} />
                 </div>
             </fieldset>
 
@@ -99,24 +103,25 @@ export const NewEvent = () => {
                     <label>Total Price: </label>
                     <span>$</span>
                     <input type="text" name="price" required autoFocus className="form-control"
-                        value={currentEvent.price}
-                        onChange={changeEventState} />
+                        value={updateEvent.price}
+                        onChange={updateEventState} />
                 </div>
             </fieldset>
 
             <fieldset>
                 <div className="form-group">
                     <label>Activity Level: </label>
-                    <input type="number" min="1" max="4" name="activity_level" required autoFocus className="form-control"
-                        value={currentEvent.activity_level}
-                        onChange={changeEventState} />
+                    <input type="number" min="1" max="4" name="activity_level"
+                    className="form-control"
+                        value={updateEvent.activity_level}
+                        onChange={updateEventState} />
                 </div>
             </fieldset>
 
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="event_image_url">Image url: </label>
-                    <input type="file" id="url_image" onChange={createEventUrlImageString} />
+                    <input type="file" id="url_image" onChange={updateEventUrlImageString} />
                     
                 </div>
             </fieldset>
@@ -128,19 +133,19 @@ export const NewEvent = () => {
                     evt.preventDefault()
 
                     const newEvent = {
-                        name: currentEvent.name,
-                        location: currentEvent.location,
-                        start_date: currentEvent.start_date,
-                        end_date: currentEvent.end_date,
-                        host: currentEvent.host,
-                        description: currentEvent.description,
-                        price: currentEvent.price,
-                        activity_level: currentEvent.activity_level,
+                        name: updateEvent.name,
+                        location: updateEvent.location,
+                        start_date: updateEvent.start_date,
+                        end_date: updateEvent.end_date,
+                        host: updateEvent.host,
+                        description: updateEvent.description,
+                        price: updateEvent.price,
+                        activity_level: updateEvent.activity_level,
                         event_image_url: eventUrlImage
                     }
 
                     // Send Post request to API
-                    createEvent(newEvent)
+                    updateTheEvent(newEvent, eventId)
                         .then(()=> navigate('/events'))
                 }}
                   className="save-button">Save Event</button>

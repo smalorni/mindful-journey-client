@@ -7,6 +7,7 @@ import { UpdatePost } from "../components/posts/UpdatePost"
 import { NewPost } from "../components/posts/NewPost"
 import { EventList } from "../components/events/EventList"
 import { NewEvent } from "../components/events/NewEvent"
+import { UpdateEvent } from "../components/events/UpdateEvent"
 
 
 export const ApplicationViews = () => {
@@ -21,6 +22,7 @@ export const ApplicationViews = () => {
             <Route path="/posts/new" element={ <NewPost />} />
             <Route path="/events" element={ <EventList />} />
             <Route path="/events/new" element={ <NewEvent />} />
+            <Route path="/events/update/:eventId" element={ <UpdateEvent />} />
         </Routes>
     )
 }

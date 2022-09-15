@@ -21,14 +21,14 @@ export const deleteEvent = (eventId) => {
 }
 
 //Update Event
-export const updateTheEvent = (event, eventId) => {
+export const updateTheEvent = (updateEvent, eventId) => {
     return fetch(`http://localhost:8000/events/${eventId}`, {
         method: "PUT",
         headers: {
             "Authorization": `Token ${localStorage.getItem("meditator_token")}`,
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(event)
+        body: JSON.stringify(updateEvent)
     })
 }
 
