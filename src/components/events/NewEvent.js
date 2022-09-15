@@ -8,7 +8,8 @@ export const NewEvent = () => {
     const [ currentEvent, setCurrentEvent ] = useState({
         name: "",
         location: "",
-        date: "2022-09-13",
+        start_date: "2022-09-13",
+        end_date: "2022-10-01",
         host: "",
         description: "",
         price: 0.00,
@@ -66,9 +67,12 @@ export const NewEvent = () => {
             <fieldset>
                 <div className="form-group">
                     <label>Date of Event: </label>
-                    <input type="date" name="name" required autoFocus className="form-control"
-                        value={currentEvent.date}
+                    <br></br> Start Date: <input type="date" name="start_date"
+                        value={currentEvent.start_date}
                         onChange={changeEventState} />
+                    <br></br>End Date:<input type="date" name="end_date"
+                    value={currentEvent.end_date}
+                    onChange={changeEventState} />
                 </div>
             </fieldset>
 
@@ -94,7 +98,7 @@ export const NewEvent = () => {
                 <div className="form-group">
                     <label>Total Price: </label>
                     <span>$</span>
-                    <input type="number" name="price" required autoFocus className="form-control"
+                    <input type="text" name="price" required autoFocus className="form-control"
                         value={currentEvent.price}
                         onChange={changeEventState} />
                 </div>
@@ -126,7 +130,8 @@ export const NewEvent = () => {
                     const newEvent = {
                         name: currentEvent.name,
                         location: currentEvent.location,
-                        date: currentEvent.date,
+                        start_date: currentEvent.start_date,
+                        end_date: currentEvent.end_date,
                         host: currentEvent.host,
                         description: currentEvent.description,
                         price: currentEvent.price,

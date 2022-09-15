@@ -31,7 +31,7 @@ export const PostList = () => {
                         <div className="post__category">{post.category.name}</div>
                         <div className="post__content">{post.content}</div>
                         <div className="post__meditator">Meditator: {post.meditator.user.first_name}{' '}{post.meditator.user.last_name}</div>
-                        <div className="post__date">Posted On: {post.created_on}</div>
+                        <div className="post__date">Posted On: {post.readable_created_on}</div>
                         
                         
                     <div className="edit_delete_buttons">

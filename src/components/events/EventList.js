@@ -30,7 +30,7 @@ export const EventList = () => {
                         </div>
                         <div className="event__name">Name of Event: {event.name}</div>
                         <div className="event__location">Location: {event.location}</div>
-                        <div className="event__date">Date of Event: {event.date}</div>
+                        <div className="event__date">Date of Event: {event.readable_start_date} - {event.readable_end_date}</div>
                         <div className="event__host">Host: {event.host}</div>
                         <div className="event__description">Description: {event.description}</div>
                         <div className="event__price">Price: ${event.price}</div>
