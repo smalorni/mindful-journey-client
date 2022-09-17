@@ -19,7 +19,7 @@ export const Login = () => {
             .then(res => {
                 if ("valid" in res && res.valid && "token" in res) {
                     localStorage.setItem("meditator_token", res.token)
-                    navigate("/")
+                    navigate("/home")
                 }
                 else {
                     invalidDialog.current.showModal()

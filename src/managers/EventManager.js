@@ -54,3 +54,27 @@ export const createEvent = (event) => {
     })
       .then(res => res.json())
   }
+
+  
+  //leave event
+  export const leaveEvent = (eventId) => {
+    return fetch(`http://localhost:8000/events/${eventId}/leave`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("meditator_token")}`
+        }
+    })
+}
+
+//attend event
+export const attendEvent = (eventId) => {
+    return fetch(`http://localhost:8000/events/${eventId}/signup`, {
+        method: "POST",
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("meditator_token")}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(eventId)
+    })
+  }
+ 

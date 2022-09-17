@@ -8,6 +8,9 @@ import { NewPost } from "../components/posts/NewPost"
 import { EventList } from "../components/events/EventList"
 import { NewEvent } from "../components/events/NewEvent"
 import { UpdateEvent } from "../components/events/UpdateEvent"
+import { PostCommentList } from "../components/postcomments/CommentList"
+import { NewComment } from "../components/postcomments/NewComment"
+import { HomePage } from "../components/home/Homepage"
 
 
 export const ApplicationViews = () => {
@@ -16,6 +19,8 @@ export const ApplicationViews = () => {
             <Route path="/login" element={ <Login />} />
             <Route path="/register" element={ <Register />} />
             <Route element={ <Authorized />} />
+
+            <Route path="/home" element={ <HomePage />} />
             
             <Route path="/posts" element={ <PostList />} />
             <Route path="/posts/update/:postId" element={ <UpdatePost />} />
@@ -23,6 +28,9 @@ export const ApplicationViews = () => {
             <Route path="/events" element={ <EventList />} />
             <Route path="/events/new" element={ <NewEvent />} />
             <Route path="/events/update/:eventId" element={ <UpdateEvent />} />
+
+            <Route path="/posts/:postId/add/postComment" element={ <NewComment />} />
+            
         </Routes>
     )
 }

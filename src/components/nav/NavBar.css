@@ -1,10 +1,41 @@
-.navbar {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: left;
+* {
+    box-sizing: border-box;
 }
 
-.navbar__item {
-    flex-basis: 20%;
-    list-style-type: none;
+body {
+    margin: 0;
+    font-size: 16px;
 }
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    color: black;
+    padding: 0 4rem;
+    height: 4rem;
+
+    
+}
+
+.nav__item, a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    background-color: #e56a4c;
+    border-radius: 2px;
+    padding: 3px;
+    transition: 0.2s ease;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+      width: 100%;
+      text-align: left; /* If you want the text to be left-aligned on small screens */
+    }
+  }

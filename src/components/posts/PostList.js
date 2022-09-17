@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { getAllPosts, deletePost } from "../../managers/PostManager"
+import { newPostComment } from "../../managers/PostCommentManager"
+import { getAllPostComments } from "../../managers/PostCommentManager"
 
 
 //Goal: A list of post can be viewed
 export const PostList = () => {
     const [ posts, setPosts ] = useState([])
+    const [ postComments, setPostComments ] = useState([])
     const navigate = useNavigate()
 
 
@@ -22,6 +25,8 @@ export const PostList = () => {
         <article className="posts">
             <button className="create-post-btn"
                 onClick={() => navigate(`/posts/new`)}>Create New Post</button>
+
+            <div className="post_section">
             {
                 posts.map(post => {
                     return <section key={`post--${post.id}`} className="post">
@@ -30,22 +35,49 @@ export const PostList = () => {
                         </div>
                         <div className="post__category">{post.category.name}</div>
                         <div className="post__content">{post.content}</div>
-                        <div className="post__meditator">Meditator: {post.meditator.user.first_name}{' '}{post.meditator.user.last_name}</div>
+                        <div className="post__meditator">Meditator: {post.meditator.user.first_name} {post.meditator.user.last_name}</div>
                         <div className="post__date">Posted On: {post.readable_created_on}</div>
-                        
-                        
-                    <div className="edit_delete_buttons">
-                    <button className="delete-post-btn" key={`delete--${post.id}`}
-                        onClick={() => {const confirmBox = window.confirm("Are you sure you want to delete this post? This action cannot be undone")
-                            if(confirmBox === true) {
+                        {
+                            post.post_comments.map(post_comment => {
+                            return <>
+                    
+                            <p>{post_comment.comment}</p>
+                            <p>{post_comment.meditator.first_name} {post_comment.meditator.last_name}</p>
+                    
+                    </>
+                })}
+           
+            <div className="edit_delete_buttons">
+                <button className="delete-post-btn" key={`delete--${post.id}`}
+                    onClick={() => {const confirmBox = window.confirm("Are you sure you want to delete this post? This action cannot be undone")
+                        if(confirmBox === true) {
                             deletePost(post.id)
                             .then(()=>getAllPosts())
                             .then(setPosts)
-                    }}}>❌</button>
-                    <button onClick={() => navigate(`/posts/update/${post.id}`)}>📝</button>
-                    </div>
-                </section>
-                })}
+                }}}>❌</button>
+
+                <button onClick={() => navigate(`/posts/update/${post.id}`)}>📝</button>
+                <button onClick={() => navigate(`/posts/${post.id}/add/postComment`)}>➕ Comment</button>
+                </div>
+                
+                <br></br>
+
+                <p className="comment_title">Comments</p>
+            {/* {
+                postComments.map(postComment => {
+                    return <>
+                    
+                    <p>{postComment.meditator.first_name}</p>
+                    <p>{postComment.readablePostComment_created_on}</p>
+                    
+                    </>
+                })} */}
+                
+
+            </section>
+                 })}
+                 </div>
+    
         </article>
     )
 }

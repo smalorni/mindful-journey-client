@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { getAllEvents, deleteEvent } from "../../managers/EventManager"
+import { getAllEvents, deleteEvent, attendEvent, leaveEvent } from "../../managers/EventManager"
 
 
 //Goal: A list of events can be viewed
@@ -47,6 +47,16 @@ export const EventList = () => {
 
                     <button onClick={() => navigate(`/events/update/${event.id}`)}>📝</button>
                     </div>
+
+                    {
+                        event.attending ? 
+                        <button className="leave-event-btn" onClick= {() => {leaveEvent(event.id)
+                            .then(()=> getAllEvents().then(setCurrentEvents))}}>Leave Event</button>
+                         :
+                        <button className="attend-event-btn" onClick= {() => {attendEvent(event.id)
+                            .then(()=> getAllEvents().then(setCurrentEvents))}}>Attend Event</button>
+                        
+                        }
                 </section>
                 })}
         </article>
