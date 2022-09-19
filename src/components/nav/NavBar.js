@@ -4,25 +4,26 @@ import "./NavBar.css"
 export const NavBar = () => {
     const navigate = useNavigate()
     return (
-        <div class="nav-container">
-                <ul className="navbar">
-                    <li className="navbar__item">
-                        <Link to="/home">Home</Link>
-                    </li>
-                    <li className="navbar__item">
-                        <Link to="/events">Events</Link>
-                    </li>
-                    <li className="navbar__item">
-                        <Link to="/posts">Posts</Link>
-                    </li>
-        
+        <nav class="navbar">
+            <img className="logo" src={process.env.PUBLIC_URL + "/Images/Journey-Logo.png"} alt="mindful-journey-logo"/>
+                <ul className="all_nav_links">
+                    <li className="navbar__items">
+                        <li>
+                            <Link to="/home">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/events">Events</Link>
+                        </li>
+                        <li>
+                            <Link to="/posts">Posts</Link>
+                        </li>
             {
                 (localStorage.getItem("meditator_token") !== null) ?
                     <li className="nav-item">
                         <button className="nav-link fakeLink"
                             onClick={() => {
                                 localStorage.removeItem("meditator_token")
-                                navigate('/login')
+                                navigate('/')
                             }}
                         >Logout</button>
                     </li> :
@@ -34,8 +35,13 @@ export const NavBar = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to="/register">Register</Link>
                         </li>
-                    </>
-            }   </ul>
-        </div>
+                    
+                        </>
+            
+            }  
+            </li>
+        </ul> 
+           
+    </nav>
     )
 }

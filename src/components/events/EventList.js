@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { getAllEvents, deleteEvent, attendEvent, leaveEvent } from "../../managers/EventManager"
+import "./Event.css"
 
 
 //Goal: A list of events can be viewed
@@ -18,23 +19,31 @@ export const EventList = () => {
     [])
 
     //map using initial state variable above
-    return (
-        <article className="events">
-            <button className="create-event-btn"
-                onClick={() => navigate(`/events/new`)}>Create New Event</button>
+    return <>
+        <h1>Discover the Perfect Retreat for You</h1>
+        <button className="create-event-btn"
+                onClick={() => navigate(`/events/new`)}>➕ New Event</button>
+            <article className="events">
+            
             {
                 currentEvents.map(event => {
-                    return <section key={`event--${event.id}`} className="event">
-                        <div div className="event__image">
+                    return <section key={`event--${event.id}`} className="events-list-container">
+                        <div className="card">
+                        <div div className="event__image-header">
                             <img src={`http://localhost:8000${event.event_image_url}`}width={250} height={250} alt={event.name} />
                         </div>
-                        <div className="event__name">Name of Event: {event.name}</div>
-                        <div className="event__location">Location: {event.location}</div>
-                        <div className="event__date">Date of Event: {event.readable_start_date} - {event.readable_end_date}</div>
-                        <div className="event__host">Host: {event.host}</div>
-                        <div className="event__description">Description: {event.description}</div>
-                        <div className="event__price">Price: ${event.price}</div>
-                        <div className="event__activity_level">Activity Level: {event.activity_level}</div>
+                        <div className="card-body">
+                        <div className="event-list">
+                        <h4>Name of Event</h4><p>{event.name}</p>
+                        <h4>Location</h4><p>{event.location}</p>
+                        <h4>Date of Event</h4><p>{event.readable_start_date} - {event.readable_end_date}</p>
+                        <h4>Host's Name</h4><p>{event.host}</p>
+                        <h4>Description</h4><p className="description">{event.description}</p>
+                        <h4>Price</h4><p>${event.price}</p>
+                        <h4>Activity Level</h4><p>{event.activity_level}</p>
+                        </div>
+                        </div>
+                    
                         
                     <div className="edit_delete_buttons">
                     <button className="delete-event-btn" key={`delete--${event.id}`}
@@ -57,8 +66,9 @@ export const EventList = () => {
                             .then(()=> getAllEvents().then(setCurrentEvents))}}>Attend Event</button>
                         
                         }
+                        </div>
                 </section>
                 })}
         </article>
-    )
+    </>
 }

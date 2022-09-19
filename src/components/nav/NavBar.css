@@ -1,34 +1,69 @@
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-body {
-    margin: 0;
-    font-size: 16px;
+.logo {
+    display: flex;
+    width: 10rem;
+    height: 10rem;
 }
 
 
 .navbar {
     display: flex;
     justify-content: space-between;
-    list-style-type: none;
-    color: black;
+    align-items: center;
+    /*color: black*/
     padding: 0 4rem;
-    height: 4rem;
-
-    
+    height: 3rem;
+    margin: 1rem;
+    /* background-color: #108dd0; */
 }
 
-.nav__item, a {
+.all_nav_links {
+    margin: 2rem;
+    padding: 0.5rem;
+    list-style-type: none;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+li, a {
+    display: flex;
     text-decoration: none;
     color: black;
+    font-size: 16px;
+    padding: 15px;
+    align-items: center;
+}
+    
+a {
+  /* color: #18272F; */
+  position: relative;
+  text-decoration: none;
+  padding: 2px;
 }
 
-a:hover {
-    background-color: #e56a4c;
-    border-radius: 2px;
-    padding: 3px;
-    transition: 0.2s ease;
+a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #9a62aa;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
 }
 
 @media screen and (max-width: 500px) {
@@ -36,6 +71,6 @@ a:hover {
       float: none;
       display: block;
       width: 100%;
-      text-align: left; /* If you want the text to be left-aligned on small screens */
-    }
-  }
+      text-align: left;
+}
+}
