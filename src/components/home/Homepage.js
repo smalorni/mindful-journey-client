@@ -1,4 +1,6 @@
 import "./Homepage.css"
+import FacebookIcon from '@mui/icons-material/Facebook';
+import { blue } from '@mui/material/colors';
 
 export const HomePage = () => {
     return <>
@@ -20,9 +22,9 @@ export const HomePage = () => {
             eos vel impedit similique quo, quasi cum ea cumque at aut quos,
             fugiat explicabo autem illo atque eaque? Iste
           </p>
-          <a href=""><p>More Info</p></a>
         </div>
       </div>
+      {/* <FacebookIcon fontSize="large"sx={{ color: blue}}/> */}
     </section>
 
     

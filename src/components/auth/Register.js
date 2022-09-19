@@ -31,6 +31,7 @@ export const Register = () => {
                 .then(res => {
                     if ("token" in res) {
                         localStorage.setItem("meditator_token", res.token)
+                        localStorage.setItem('user_id', res.user_id)
                         navigate("/")
                     }
                 })

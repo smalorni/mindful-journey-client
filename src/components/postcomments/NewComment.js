@@ -43,21 +43,6 @@ export const NewComment = () => {
               </div>
             </div>
           </fieldset>
-          
-          {/* <fieldset>
-            <div className="form-group">
-            <label>Comment:</label>
-              <div className="control">
-              <input className="input" required autoFocus
-                type="text"
-                value={comment.content}
-                name = "content"
-                onChange={handleUpdate } />
-              </div>
-            </div>
-          </fieldset> */}
-
-            <br></br>
 
           <div className="field is-grouped">
             <div className="control">
@@ -66,6 +51,7 @@ export const NewComment = () => {
                 className="button is-success">
                 Save
               </button>
+              <button className="cancel" onClick={() => navigate('/posts')}>Cancel</button>
             </div>
           </div>
         </div>

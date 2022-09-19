@@ -8,7 +8,6 @@ import { NewPost } from "../components/posts/NewPost"
 import { EventList } from "../components/events/EventList"
 import { NewEvent } from "../components/events/NewEvent"
 import { UpdateEvent } from "../components/events/UpdateEvent"
-import { PostCommentList } from "../components/postcomments/CommentList"
 import { NewComment } from "../components/postcomments/NewComment"
 import { HomePage } from "../components/home/Homepage"
 

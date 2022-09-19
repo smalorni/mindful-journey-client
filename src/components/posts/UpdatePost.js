@@ -9,15 +9,18 @@ export const UpdatePost = () => {
     const navigate = useNavigate()
     
     const [ updatePost, setUpdatePost ] = useState({
-        category: 1,
         title: "",
+        category: 1,
         content: "",
         meditator: 1
     })
 
     //UseEffect to update a specific post
     useEffect(() => {
-        getSinglePost(postId).then(data => setUpdatePost(data))
+        getSinglePost(postId).then(data => { 
+            data.category = data.category.id
+            setUpdatePost(data)})
+    
     }, 
         [postId]
     )
@@ -64,7 +67,7 @@ export const UpdatePost = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="category">Post Category: </label>
-                    <select name="category"
+                    <select value={updatePost.category} name="category"
                         onChange={updatePostState} >
                             <option value="0">Select Category:</option>
                             {
@@ -113,6 +116,7 @@ export const UpdatePost = () => {
                         .then(()=> navigate('/posts'))
                 }}
                   className="update-button">Update</button>
+                  <button className="cancel" onClick={() => navigate('/posts')}>Cancel</button>
             </div>
             </div>
         </form>

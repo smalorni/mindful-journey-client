@@ -104,6 +104,7 @@ export const NewPost = () => {
                         .then(()=> navigate('/posts'))
                 }}
                   className="save-button">Save Post</button>
+                  <button className="cancel" onClick={() => navigate('/posts')}>Cancel</button>
             </div>
             </div>
         </form>

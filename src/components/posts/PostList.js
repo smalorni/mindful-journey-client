@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { getAllPosts, deletePost } from "../../managers/PostManager"
-import { newPostComment } from "../../managers/PostCommentManager"
-import { getAllPostComments } from "../../managers/PostCommentManager"
+// import { newPostComment } from "../../managers/PostCommentManager"
+// import { getAllPostComments } from "../../managers/PostCommentManager"
+// import { deletePostComment} from "../../managers/PostCommentManager"
 
 
 //Goal: A list of post can be viewed
@@ -35,17 +36,9 @@ export const PostList = () => {
                         </div>
                         <div className="post__category">{post.category.name}</div>
                         <div className="post__content">{post.content}</div>
-                        <div className="post__meditator">Meditator: {post.meditator.user.first_name} {post.meditator.user.last_name}</div>
+                        <div className="post__meditator">Meditator: {post.meditator.first_name} {post.meditator.last_name}</div>
                         <div className="post__date">Posted On: {post.readable_created_on}</div>
-                        {
-                            post.post_comments.map(post_comment => {
-                            return <>
-                    
-                            <p>{post_comment.comment}</p>
-                            <p>{post_comment.meditator.first_name} {post_comment.meditator.last_name}</p>
-                    
-                    </>
-                })}
+                        
            
             <div className="edit_delete_buttons">
                 <button className="delete-post-btn" key={`delete--${post.id}`}
@@ -57,23 +50,23 @@ export const PostList = () => {
                 }}}>❌</button>
 
                 <button onClick={() => navigate(`/posts/update/${post.id}`)}>📝</button>
-                <button onClick={() => navigate(`/posts/${post.id}/add/postComment`)}>➕ Comment</button>
+                
                 </div>
                 
                 <br></br>
 
                 <p className="comment_title">Comments</p>
-            {/* {
-                postComments.map(postComment => {
-                    return <>
+                <button onClick={() => navigate(`/posts/${post.id}/add/postComment`)}>➕ Comment</button>
+                {
+                            post.post_comments.map(post_comment => {
+                            return <>
                     
-                    <p>{postComment.meditator.first_name}</p>
-                    <p>{postComment.readablePostComment_created_on}</p>
+                            <p>{post_comment.comment}</p>
+                            <p>{post_comment.meditator.first_name} {post_comment.meditator.last_name}</p>
                     
                     </>
-                })} */}
-                
-
+                })}
+            
             </section>
                  })}
                  </div>

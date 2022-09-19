@@ -9,6 +9,9 @@ export const Login = () => {
     const invalidDialog = useRef()
     const navigate = useNavigate()
 
+    //Added this for specific user view
+    //const [ userView, setUserView ] = useState(false)
+
     const handleLogin = (e) => {
         e.preventDefault()
         const user = {
@@ -19,6 +22,7 @@ export const Login = () => {
             .then(res => {
                 if ("valid" in res && res.valid && "token" in res) {
                     localStorage.setItem("meditator_token", res.token)
+                    localStorage.setItem('user_id', res.user_id)
                     navigate("/home")
                 }
                 else {
