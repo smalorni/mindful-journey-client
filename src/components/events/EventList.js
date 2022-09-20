@@ -7,7 +7,6 @@ import EditIcon from '@mui/icons-material/Edit';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import AddIcon from '@mui/icons-material/Add';
-import Grid from '@mui/material/Grid';
 
 
 //Goal: A list of events can be viewed
@@ -36,9 +35,9 @@ export const EventList = () => {
                     return <section key={`event--${event.id}`} className="events-list-container">
                         <div className="card">
                         <div div className="event__image-header">
-                            <img src={`http://localhost:8000${event.event_image_url}`}width={350} height={350} alt={event.name} />
+                            <img src={`http://localhost:8000${event.event_image_url}`} alt={event.name} />
                         </div>
-                        <div className="card-body">
+                        
                         <div className="event-list">
                         <h4>Name of Event</h4><p>{event.name}</p>
                         <h4>Location</h4><p>{event.location}</p>
@@ -46,41 +45,41 @@ export const EventList = () => {
                         <h4>Host's Name</h4><p>{event.host}</p>
                         <h4>Description</h4><p className="description">{event.description}</p>
                         <h4>Price</h4><p>${event.price}</p>
-                        <h4>Activity Level</h4><p>{event.activity_level}</p>
-                        </div>
-                        </div>
+                        <h4>Activity Level</h4><p>{event.activity_level}</p></div>
                     
-                    {/* added this section     */}
-                
+                    {/* Attending/Not Attending Buttons */}
+                    {
+                        event.attending ? 
+                        <button className="leave-event-btn" onClick= {() => {leaveEvent(event.id)
+                            .then(()=> getAllEvents().then(setCurrentEvents))}}><HighlightOffIcon/>Not Attending Event</button>
+                         :
+                        <button className="attend-event-btn" onClick= {() => {attendEvent(event.id)
+                            .then(()=> getAllEvents().then(setCurrentEvents))}}><CheckCircleIcon/>Attending Event</button>
+                        
+                        }
+
+                    {/* local storage access to certain buttons */}
+                    
                     {parseInt(localStorage.getItem('user_id')) === event.meditator ?
-                   
-                    <div className="edit_delete_buttons">
                 
-                    <button onClick={() => navigate(`/events/update/${event.id}`)}><EditIcon/></button>
+                    <div className="edit_delete_buttons">
+            
+                    <button className="edit-icon" onClick={() => navigate(`/events/update/${event.id}`)}><EditIcon/></button>
 
                     <button className="delete-event-btn" key={`delete--${event.id}`}
-                        onClick={() => {const confirmBox = window.confirm("Are you sure you want to delete this event? This action cannot be undone.")
+                        onClick={() => {const confirmBox = window.confirm("Delete this event? This action cannot be undone.")
                             if(confirmBox === true) {
                             deleteEvent(event.id)
                             .then(()=>getAllEvents())
                             .then(setCurrentEvents)
-                    }}}><DeleteIcon/></button>
+                            }}}><DeleteIcon/></button>
                     </div>
                     : 
                     ""
-                }
-                
+                    }
 
-                    {
-                        event.attending ? 
-                        <button className="leave-event-btn" onClick= {() => {leaveEvent(event.id)
-                            .then(()=> getAllEvents().then(setCurrentEvents))}}><Grid container direction="row" alignItems="center"><Grid item><HighlightOffIcon/> Not Attending Event</Grid></Grid></button>
-                         :
-                        <button className="attend-event-btn" onClick= {() => {attendEvent(event.id)
-                            .then(()=> getAllEvents().then(setCurrentEvents))}}><Grid container direction="row" alignItems="center"><Grid item><CheckCircleIcon/> Attending Event</Grid></Grid></button>
-                        
-                        }
-                        </div>
+
+                    </div>
                 </section>
                 })}
         </article>

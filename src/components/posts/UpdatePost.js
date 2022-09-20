@@ -84,7 +84,7 @@ export const UpdatePost = () => {
             <fieldset>
                 <div className="form-group">
                     <label>Content: </label>
-                    <input type="textarea" name="content" required autoFocus className="form-control"
+                    <textarea name="content" className="content"
                         value={updatePost.content}
                         onChange={updatePostState} />
                 </div>

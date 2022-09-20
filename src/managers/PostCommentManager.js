@@ -37,16 +37,16 @@ export const newPostComment = (comment) => {
     })
   }
   
-  export const updatePostComment = (comment) => {
-    return fetch(`http://localhost:8000/postComments/${comment.id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        'Authorization': `Token ${localStorage.getItem('meditator_token')}`
-      },
-      body: JSON.stringify(comment)
-    })
-  }
+  // export const updatePostComment = (comment) => {
+  //   return fetch(`http://localhost:8000/postComments/${comment.id}`, {
+  //     method: "PUT",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       'Authorization': `Token ${localStorage.getItem('meditator_token')}`
+  //     },
+  //     body: JSON.stringify(comment)
+  //   })
+  // }
   
   export const getSinglePostComment = (id) => {
     return fetch(`http://localhost:8000/postComments/${id}`, {

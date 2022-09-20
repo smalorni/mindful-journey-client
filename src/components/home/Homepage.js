@@ -24,10 +24,7 @@ export const HomePage = () => {
           </p>
         </div>
       </div>
-      {/* <FacebookIcon fontSize="large"sx={{ color: blue}}/> */}
-    </section>
-
-    
+    </section> 
 </>
 }
 

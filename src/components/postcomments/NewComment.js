@@ -35,14 +35,14 @@ export const NewComment = () => {
             <div className="form-group">
             <label>Comment:</label>
               <div className="control">
-              <input className="input" required autoFocus
-                type="textarea"
+              <textarea className="input" required autoFocus
                 value={postComment.comment}
                 name = "comment"
                 onChange={handleUpdate } />
               </div>
             </div>
           </fieldset>
+
 
           <div className="field is-grouped">
             <div className="control">

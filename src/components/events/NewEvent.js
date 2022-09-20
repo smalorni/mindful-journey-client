@@ -88,7 +88,7 @@ export const NewEvent = () => {
             <fieldset>
                 <div className="form-group">
                     <label>Description: </label>
-                    <input type="textarea" name="description" required autoFocus className="form-control"
+                    <textarea name="description" className="form-control"
                         value={currentEvent.description}
                         onChange={changeEventState} />
                 </div>

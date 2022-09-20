@@ -13,11 +13,6 @@ h1 {
     margin-left: 1rem;
     flex-wrap: wrap;
 }
-.event__image-header {
-    height: 300px;
-    width: auto;
-    margin-bottom: 7rem;
-}
 
 .events-list-container {
     display: flex;
@@ -38,11 +33,16 @@ h1 {
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
+img {
+    height: 350px;
+    width: auto;
+    margin-top: 1rem;
+}
+
 .event__image-header {
     display: flex;
     justify-content: center;
-    padding: 20px;
-    min-height: 250px;
+    margin-bottom: 2rem;
 }
 
 p {
@@ -53,11 +53,44 @@ p {
     text-align: left;
 }
 
-.attend-event-btn, .leave-event-btn {
-    width: 9rem;
+.attend-event-btn {
+    width: 9.5rem;
     height: 2rem;
     margin: 2rem;
-    font-size: 14px;
+    font-size: 13px;
+    background-color: #5151f8;
+    border-radius: 10px;
+    border-color: #5151f8;
+    display: flex;
+    /* Helps with icon alignment inside text */
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.leave-event-btn {
+    width: 11rem;
+    height: 2rem;
+    margin: 2rem;
+    font-size: 13px;
+    background-color: #5151f8;
+    border-radius: 10px;
+    border-color: #5151f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 1rem;
+
 }
 
 .create-event-btn {
@@ -73,7 +106,22 @@ p {
     padding: 5px 10px;
     height: 2rem;
     width: 8rem;
-    margin-left: 3rem;
+    margin-left: 2.7rem;
     margin-top: 4rem;
+    font-weight: bold;
 }
+
+.delete-event-btn {
+    color: black;
+    float: right;
+    margin-right: 1rem;
+}
+
+.edit-icon {
+    color: black;
+    float: left;
+    margin-left: 1rem;
+}
+
+
 
