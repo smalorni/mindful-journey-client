@@ -10,6 +10,7 @@ import { NewEvent } from "../components/events/NewEvent"
 import { UpdateEvent } from "../components/events/UpdateEvent"
 import { NewComment } from "../components/postcomments/NewComment"
 import { HomePage } from "../components/home/Homepage"
+import { EditComment } from "../components/postcomments/EditComment"
 
 
 export const ApplicationViews = () => {
@@ -29,6 +30,7 @@ export const ApplicationViews = () => {
             <Route path="/events/update/:eventId" element={ <UpdateEvent />} />
 
             <Route path="/posts/:postId/add/postComment" element={ <NewComment />} />
+            <Route path="/posts/:postId/update/:commentId" element={ <EditComment />} />
             
         </Routes>
     )

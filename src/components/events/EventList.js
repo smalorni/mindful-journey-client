@@ -45,7 +45,11 @@ export const EventList = () => {
                         <h4>Host's Name</h4><p>{event.host}</p>
                         <h4>Description</h4><p className="description">{event.description}</p>
                         <h4>Price</h4><p>${event.price}</p>
+                        <div className="level-image">
+                        <img className="vertical-level-crop" src={process.env.PUBLIC_URL + "/Images/vertical-level-crop.png"} alt ="activity-level-gauge" />
                         <h4>Activity Level</h4><p>{event.activity_level}</p></div>
+                        </div>
+                    
                     
                     {/* Attending/Not Attending Buttons */}
                     {
@@ -61,9 +65,7 @@ export const EventList = () => {
                     {/* local storage access to certain buttons */}
                     
                     {parseInt(localStorage.getItem('user_id')) === event.meditator ?
-                
-                    <div className="edit_delete_buttons">
-            
+                    <>
                     <button className="edit-icon" onClick={() => navigate(`/events/update/${event.id}`)}><EditIcon/></button>
 
                     <button className="delete-event-btn" key={`delete--${event.id}`}
@@ -73,11 +75,11 @@ export const EventList = () => {
                             .then(()=>getAllEvents())
                             .then(setCurrentEvents)
                             }}}><DeleteIcon/></button>
-                    </div>
-                    : 
-                    ""
+                        </>
+                        : 
+                        ""
                     }
-
+                   
 
                     </div>
                 </section>

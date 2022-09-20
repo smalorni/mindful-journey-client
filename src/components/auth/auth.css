@@ -17,7 +17,11 @@ fieldset {
 
 .form--login > fieldset > input[type="email"],
 .form--login > fieldset > input[type="password"] {
-    width: 25em;
+    width: 30em;
+}
+
+fieldset {
+    
 }
 
 .label--login {
@@ -44,12 +48,12 @@ fieldset {
 
 .container--login {
     text-align: center;
+    margin-top: 10rem;
 }
 
 .form--login {
-    background-size: cover;
     background-position-x: center;
-    background-image: url('./logo.png');
+    text-align: center;
     z-index: 1;
     min-height: 25rem;
     min-width: 45rem;

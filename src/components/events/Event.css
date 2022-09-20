@@ -123,5 +123,11 @@ p {
     margin-left: 1rem;
 }
 
+.vertical-level-crop {
+    width: 3rem;
+    height: 2rem;
+    margin-top: -0.2rem;
+}
+
 
 

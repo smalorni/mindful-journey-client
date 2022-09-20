@@ -58,7 +58,8 @@ export const PostList = () => {
                         
                         </div>
 
-                
+                        {parseInt(localStorage.getItem('user_id')) === post.meditator.id ?
+                        <>
                         <button className="post-edit-btn" onClick={() => navigate(`/posts/update/${post.id}`)}><EditIcon/></button>
                         <button className="delete-post-btn" key={`delete--${post.id}`}
                     onClick={() => {const confirmBox = window.confirm("Are you sure you want to delete this post? This action cannot be undone")
@@ -67,7 +68,11 @@ export const PostList = () => {
                             .then(()=>getAllPosts())
                             .then(setPosts)
                 }}}><DeleteIcon/></button>
-    
+                        </>
+                        : 
+                        ""
+                        }
+
                 <br></br>
                 <button onClick={() => navigate(`/posts/${post.id}/add/postComment`)}><AddCommentIcon/>Comment</button>
                 <p className="comment_title">Comments</p>
@@ -78,8 +83,18 @@ export const PostList = () => {
                             <p>{post_comment.comment}</p>
                             <p>{post_comment.meditator.first_name} {post_comment.meditator.last_name}</p>
                 
+                            {/* local storage access to certain buttons */}
+                            {parseInt(localStorage.getItem('user_id')) === post_comment.meditator.id ?
+                            <>
                             <button onClick={() => handleDelete(post_comment.id)}><DeleteIcon/></button>
+
+                            <button onClick={() => navigate(`/posts/${post.id}/update/${post_comment.id}`)}><EditIcon/></button>
+                            </>
+                            : 
+                            ""
+                            }
                             </> 
+                            
                 })}
             
             </section>

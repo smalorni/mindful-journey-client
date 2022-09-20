@@ -1,34 +1,42 @@
-import { newPostComment } from "../../managers/PostCommentManager"
-import { useState } from "react"
+import { getSinglePostComment, updatePostComment } from "../../managers/PostCommentManager"
+import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
+import { getSinglePost } from "../../managers/PostManager"
 
-export const NewComment = () => {
-  const { postId } = useParams()
+export const EditComment = () => {
+  const { commentId } = useParams()
   const navigate = useNavigate()
 
-  const [postComment, setPostComment] = useState({
-    post: postId,
+  const [updateComment, setUpdateComment] = useState({
     comment: "",
     meditator: 1
   })
 
+  useEffect(() => {
+    getSinglePostComment(commentId).then(data => { 
+        setUpdateComment(data)})
+
+}, 
+    [commentId]
+)
+
   const handleSave = (event) => {
     event.preventDefault()
-    newPostComment(postComment).then(()=> navigate(`/posts` )
+    updatePostComment(updateComment).then(()=> navigate(`/posts` )
     )
   }
 
   const handleUpdate = (evt) => {
-    const copy = { ...postComment }
+    const copy = { ...updateComment }
     copy[evt.target.name] = evt.target.value
-    setPostComment(copy)
+    setUpdateComment(copy)
   }
 
   return (
     <form className="commentForm">
       <div className="comment_card">
-      <h2 className="title">Add A New Comment</h2>
+      <h2 className="title">Update Comment</h2>
         <div className="card-content">
 
           <fieldset>
@@ -36,7 +44,7 @@ export const NewComment = () => {
             <label>Comment:</label>
               <div className="control">
               <textarea className="input" required autoFocus
-                value={postComment.comment}
+                value={updateComment.comment}
                 name = "comment"
                 onChange={handleUpdate } />
               </div>
@@ -49,7 +57,7 @@ export const NewComment = () => {
               <button
                 onClick={handleSave}
                 className="button is-success">
-                Save
+                Update
               </button>
               <button className="cancel" onClick={() => navigate('/posts')}>Cancel</button>
             </div>
