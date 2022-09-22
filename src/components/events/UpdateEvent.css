@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.updateEventForm {
+    background-color: #ffffff;
+    color: #2b2c2c;
+	display: flex;
+	flex-direction: column;
+    border: rgb(157, 156, 156) 2px solid;
+    height: 40rem;
+    width: 40rem;
+    margin-top: 0.5rem;
+    margin-left: 50%;
+    margin-right: 50%;
+    margin: auto;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    text-align: left;
+}
+

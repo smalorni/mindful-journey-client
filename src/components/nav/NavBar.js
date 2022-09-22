@@ -20,10 +20,10 @@ export const NavBar = () => {
             {
                 (localStorage.getItem("meditator_token") !== null) ?
                     <li className="nav-item">
-                        <button className="nav-link fakeLink"
+                        <button className="log-out-btn"
                             onClick={() => {
                                 localStorage.removeItem("meditator_token")
-                                navigate('/')
+                                navigate('/login')
                             }}
                         >Logout</button>
                     </li> :
@@ -31,9 +31,6 @@ export const NavBar = () => {
                         
                         <li className="nav-item">
                             <Link className="nav-link" to="/login">Login</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/register">Register</Link>
                         </li>
                     
                         </>

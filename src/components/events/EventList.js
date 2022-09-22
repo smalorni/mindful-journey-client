@@ -25,7 +25,7 @@ export const EventList = () => {
 
     //map using initial state variable above
     return <>
-        <h1>Discover the Perfect Retreat for You</h1>
+        <h1 className="event-title">Discover the Perfect Retreat for You</h1>
         <button className="create-event-btn"
                 onClick={() => navigate(`/events/new`)}><AddIcon/>New Event</button>
             <article className="events">
@@ -69,7 +69,7 @@ export const EventList = () => {
                     <button className="edit-icon" onClick={() => navigate(`/events/update/${event.id}`)}><EditIcon/></button>
 
                     <button className="delete-event-btn" key={`delete--${event.id}`}
-                        onClick={() => {const confirmBox = window.confirm("Delete this event? This action cannot be undone.")
+                        onClick={() => {const confirmBox = window.confirm("Delete this event? This action can't be undone.")
                             if(confirmBox === true) {
                             deleteEvent(event.id)
                             .then(()=>getAllEvents())

@@ -18,20 +18,20 @@ export const ApplicationViews = () => {
         <Routes>
             <Route path="/login" element={ <Login />} />
             <Route path="/register" element={ <Register />} />
-            <Route element={ <Authorized />} />
+            <Route element={ <Authorized />} >
 
-            <Route path="/home" element={ <HomePage />} />
-            
-            <Route path="/posts" element={ <PostList />} />
-            <Route path="/posts/update/:postId" element={ <UpdatePost />} />
-            <Route path="/posts/new" element={ <NewPost />} />
-            <Route path="/events" element={ <EventList />} />
-            <Route path="/events/new" element={ <NewEvent />} />
-            <Route path="/events/update/:eventId" element={ <UpdateEvent />} />
+                <Route path="/home" element={ <HomePage />} />
+                
+                <Route path="/posts" element={ <PostList />} />
+                <Route path="/posts/update/:postId" element={ <UpdatePost />} />
+                <Route path="/posts/new" element={ <NewPost />} />
+                <Route path="/events" element={ <EventList />} />
+                <Route path="/events/new" element={ <NewEvent />} />
+                <Route path="/events/update/:eventId" element={ <UpdateEvent />} />
 
-            <Route path="/posts/:postId/add/postComment" element={ <NewComment />} />
-            <Route path="/posts/:postId/update/:commentId" element={ <EditComment />} />
-            
+                <Route path="/posts/:postId/add/postComment" element={ <NewComment />} />
+                <Route path="/posts/:postId/update/:commentId" element={ <EditComment />} />
+            </Route>
         </Routes>
     )
 }

@@ -3,14 +3,17 @@ body {
     padding: 0;
 }
 
-h1 {
+.event-title {
     text-align: center;
+    margin-top: 5rem;
+    color: #320351;
+    font-size: 35px
 }
 
 .events {
     display: flex;
     flex-direction: row;
-    margin-left: 1rem;
+    margin-left: 3rem;
     flex-wrap: wrap;
 }
 
@@ -29,7 +32,6 @@ h1 {
     overflow: hidden;
     width: 400px;
     padding: 15px;
-    /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
@@ -106,7 +108,7 @@ p {
     padding: 5px 10px;
     height: 2rem;
     width: 8rem;
-    margin-left: 2.7rem;
+    margin-left: 4.4rem;
     margin-top: 4rem;
     font-weight: bold;
 }

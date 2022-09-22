@@ -8,6 +8,7 @@
     display: flex;
     width: 10rem;
     height: 10rem;
+    margin-top: -1rem;
 }
 
 
@@ -15,11 +16,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*color: black*/
     padding: 0 4rem;
     height: 3rem;
     margin: 2rem;
-    /* background-color: #108dd0; */
+    margin-right: -5rem;
 }
 
 .all_nav_links {
@@ -72,5 +72,14 @@ a:hover::before {
       display: block;
       width: 100%;
       text-align: left;
+  }
 }
+.log-out-btn {
+    background-color: #5151f8;
+    border-radius: 10px;  
+    border-color: #5151f8;
+    width: 5rem;
+    height: 2rem;
+    color: white;
+    cursor: pointer;
 }

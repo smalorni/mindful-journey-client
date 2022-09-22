@@ -1,0 +1,97 @@
+.first-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    flex-wrap: wrap;
+}
+
+.inside-container {
+    display: block;
+    justify-content: space-evenly;
+    text-align: left;
+}
+
+form {
+	background-color: #ffffff;
+    color: #2b2c2c;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 100%;
+}
+
+a.register{
+    text-align: center;
+    color: #3f3ff7;
+}
+
+.reg-account{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+ fieldset-login {
+    min-width: 0;
+    padding: 0.5rem;
+    margin: 0;
+    border: 0;
+    font-size: 12px;
+}
+
+/* Box form */
+.container--login {
+    display: flex;
+    flex-direction: column;
+    height: 30rem;
+    width: 50rem;
+    margin: auto;
+    align-items: center;
+    margin-top: 5rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    padding-bottom: 1rem;
+}
+
+/* The inside form elements */
+.form-control {
+    display: flex;
+    width: 94%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 12px;
+    color: #2b2c2c;
+    border: 2px solid rgb(193, 187, 193);
+    border-radius: 8px; 
+    width: 20rem;
+}
+
+.sign-in-title {
+    text-align: center;
+    font-size: 30px;
+    color: #3f3ff7;
+    margin-top: 1rem;
+}
+
+.login-title {
+    color: rgb(62, 60, 62);
+}
+
+
+.submit-btn {
+    background-color: #5151f8;
+    border-color: #5151f8;
+    border-radius: 50px;  
+    width: 10rem;
+    height: 2rem;
+    color: white
+}
+
+.solo-logo {
+    height: 4rem;
+    width: 4rem;
+    margin-top: -3rem;
+}

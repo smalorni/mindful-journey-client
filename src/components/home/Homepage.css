@@ -3,23 +3,25 @@
     margin: 0;
     padding: 0;
   }
+
 .yoga-img2 {
     max-width: 100%; 
     display: block; 
     height: auto;
-    width: 40rem;
+    width: 45rem;
     float: right;
+    margin-top: -4rem;
 } 
 
-.homepage_title {
+.homepage_title  {
     font-size: 5rem;
+    color: #320351
     
 }
 .text_overlay {
     display: block;
-    /* grid-template-columns: 50% 50%; */
     height: 100%;
-    width: 500px;
+    width: 600px;
     margin-left: 5rem;
   }
   
@@ -30,6 +32,7 @@
   
   .text_overlay .container > * {
     margin-bottom: 1rem;
+    margin-left: 1rem;
   }
 
 

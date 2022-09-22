@@ -3,7 +3,7 @@ import { NavBar } from "./components/nav/NavBar"
 
 export const MindfulJourney = () => (
   <>
-    <NavBar />
+    {/* <NavBar /> */}
     <ApplicationViews />
   </>
 )

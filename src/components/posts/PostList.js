@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { getAllPosts, deletePost } from "../../managers/PostManager"
-// import { newPostComment } from "../../managers/PostCommentManager"
-// import { getAllPostComments } from "../../managers/PostCommentManager"
 import { deletePostComment} from "../../managers/PostCommentManager"
 import "./Post.css"
 //Import from Material UI
@@ -37,24 +35,28 @@ export const PostList = () => {
         })
     }
 
-    return (
-        <article className="post_card">
+    return <>
             <button className="create-post-btn"
                 onClick={() => navigate(`/posts/new`)}>Create New Post</button>
-
+            
+            <article className="posts">
             <div className="post-container">
             {
                 posts.map(post => {
-                    return <section key={`post--${post.id}`} className="post">
+                    return <section key={`post--${post.id}`} className="post-container">
                        <div className="post-card">
-                        <div div className="post__image">
-                            <img src={`http://localhost:8000${post.post_image_url}`} alt={post.title} />
-                        </div>
                         <h1 className="post-title">{post.title}</h1>
-                        <p className="post__date"><CalendarMonthIcon/> {post.readable_created_on}</p>
-                        <p className="post__meditator"><SelfImprovementIcon/>Meditator: {post.meditator.first_name} {post.meditator.last_name}</p>
+                            <div div className="post__image">
+                                <img src={`http://localhost:8000${post.post_image_url}`} alt={post.title} />
+                            </div>
+                        
+                        <div className="content-container">
+                        
+                        <p className="post__date"><CalendarMonthIcon color="primary" />{post.readable_created_on}</p>
+                        <p className="post__meditator"><SelfImprovementIcon color="primary"/> {post.meditator.first_name} {post.meditator.last_name}</p>
                         <p className="post__category">{post.category.name}</p>
                         <p className="post__content">{post.content}</p>
+                        </div>
                         
                         </div>
 
@@ -62,7 +64,7 @@ export const PostList = () => {
                         <>
                         <button className="post-edit-btn" onClick={() => navigate(`/posts/update/${post.id}`)}><EditIcon/></button>
                         <button className="delete-post-btn" key={`delete--${post.id}`}
-                    onClick={() => {const confirmBox = window.confirm("Are you sure you want to delete this post? This action cannot be undone")
+                    onClick={() => {const confirmBox = window.confirm("Delete this post? This action can't be undone")
                         if(confirmBox === true) {
                             deletePost(post.id)
                             .then(()=>getAllPosts())
@@ -102,5 +104,5 @@ export const PostList = () => {
             </div>
     
         </article>
-    )
+        </>
 }

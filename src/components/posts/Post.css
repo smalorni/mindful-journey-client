@@ -3,15 +3,54 @@ body {
     padding: 0;
 }
 
-.post-card {
+.posts {
     display: flex;
     flex-direction: column;
-    background-color: aquamarine;
-    height: 50rem;
-    width: 30rem;
-    place-items: center;
-    margin: 3rem;
-    padding: 2rem;  
+    margin-left: 3rem;
+    flex-wrap: wrap;
+}
+
+.post-container {
+    justify-content: space-evenly;
+    text-align: left;
+}
+
+.post-card {
+    margin: auto;
+    margin-top: 4rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    /* overflow: hidden; */
+    width: 800px;
+    padding: 20px 50px 30px 50px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.post__image {
+    text-align: center;
+    height: 350px;
+    width: auto;
+}
+
+.post-title {
+    font-size: 25px;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.post__date, .post__meditator {
+    display: flex;
+    font-size: 14px;
+    justify-content: left;
+    align-items: center;
+}
+
+.post__date {
+    margin-bottom: 0rem;
+}
+
+.content-container {
+    margin-top: 2rem;
 }
 
 

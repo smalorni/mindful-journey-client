@@ -2,7 +2,6 @@ import { getSinglePostComment, updatePostComment } from "../../managers/PostComm
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
-import { getSinglePost } from "../../managers/PostManager"
 
 export const EditComment = () => {
   const { commentId } = useParams()

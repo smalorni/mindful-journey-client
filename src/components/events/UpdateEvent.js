@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { updateTheEvent, getSingleEvent } from "../../managers/EventManager"
+import "./UpdateEvent.css"
 
 export const UpdateEvent = () => {
     const navigate = useNavigate()
@@ -48,25 +49,25 @@ export const UpdateEvent = () => {
         <form className="updateEventForm">
             <h2 className="updateEventForm__title">Update Event</h2>
             
-            <fieldset>
+            <fieldset-update-event>
                 <div className="form-group">
                 <label>Name of Event: </label>
                     <input type="text" name="name" required autoFocus className="form-control"
                         value={updateEvent.name}
                         onChange={updateEventState} />
                 </div>
-            </fieldset>
+            </fieldset-update-event>
 
-            <fieldset>
+            <fieldset-update-event>
                 <div className="form-group">
                     <label>Location: </label>
                     <input type="text" name="location" required autoFocus className="form-control"
                         value={updateEvent.location}
                         onChange={updateEventState} />
                 </div>
-            </fieldset>
+            </fieldset-update-event>
 
-            <fieldset>
+            <fieldset-update-event>
                 <div className="form-group">
                     <label>Date of Event: </label>
                     <br></br> 
@@ -78,27 +79,27 @@ export const UpdateEvent = () => {
                     value={updateEvent.end_date}
                     onChange={updateEventState} />
                 </div>
-            </fieldset>
+            </fieldset-update-event>
 
-            <fieldset>
+            <fieldset-update-event>
                 <div className="form-group">
                     <label>Host's Name:</label>
                     <input type="text" name="host" required autoFocus className="form-control"
                         value={updateEvent.host}
                         onChange={updateEventState} />
                 </div>
-            </fieldset>
+            </fieldset-update-event>
 
-            <fieldset>
+            <fieldset-update-event>
                 <div className="form-group">
                     <label>Description: </label>
                     <textarea name="description" className="form-control"
                         value={updateEvent.description}
                         onChange={updateEventState} />
                 </div>
-            </fieldset>
+            </fieldset-update-event>
 
-            <fieldset>
+            <fieldset-update-event>
                 <div className="form-group">
                     <label>Total Price: </label>
                     <span>$</span>
@@ -106,9 +107,9 @@ export const UpdateEvent = () => {
                         value={updateEvent.price}
                         onChange={updateEventState} />
                 </div>
-            </fieldset>
+            </fieldset-update-event>
 
-            <fieldset>
+            <fieldset-update-event>
                 <div className="form-group">
                     <label>Activity Level: </label>
                     <input type="number" min="1" max="4" name="activity_level"
@@ -116,15 +117,15 @@ export const UpdateEvent = () => {
                         value={updateEvent.activity_level}
                         onChange={updateEventState} />
                 </div>
-            </fieldset>
+            </fieldset-update-event>
 
-            <fieldset>
+            <fieldset-update-event>
                 <div className="form-group">
                     <label htmlFor="event_image_url">Image url: </label>
                     <input type="file" id="url_image" onChange={updateEventUrlImageString} />
                     
                 </div>
-            </fieldset>
+            </fieldset-update-event>
             
             <div className="field">
               <div className="control">
