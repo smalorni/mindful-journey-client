@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate} from "react-router-dom"
 import { createEvent } from "../../managers/EventManager"
+import "./NewEvent.css"
 
 export const NewEvent = () => {
     const navigate = useNavigate()
@@ -15,12 +16,6 @@ export const NewEvent = () => {
         price: 0.00,
         activity_level: 1,
     })
-
-    // useEffect(() => {
-    //     getAllEvents().then(data => setPostCategories(data))
-    // }, 
-    //     []
-    // )
 
     const [ eventUrlImage, setEventUrlImage ] = useState("")
     
@@ -43,86 +38,93 @@ export const NewEvent = () => {
     }
 
     return (
-        <form className="newEventForm">
-            <h2 className="newEventForm__title">New Event</h2>
+        <>
+
+        <h2 className="newEventForm__title">New Event</h2>
+            <form className="newEventForm">
+                <section className="new-event-container">
+                    <div className="event-box">
             
-            <fieldset>
-                <div className="form-group">
-                <label>Name of Event: </label>
-                    <input type="text" name="name" required autoFocus className="form-control"
-                        value={currentEvent.name}
-                        onChange={changeEventState} />
-                </div>
-            </fieldset>
+                        <fieldset-new-event>
+                            <div className="form-group">
+                                <label>Name of Event: </label>
+                                    <input type="text" name="name" required autoFocus className="form-control"
+                                    value={currentEvent.name}
+                                    onChange={changeEventState} />
+                            </div>
+                        </fieldset-new-event>
 
-            <fieldset>
-                <div className="form-group">
-                    <label>Location: </label>
-                    <input type="text" name="location" required autoFocus className="form-control"
-                        value={currentEvent.location}
-                        onChange={changeEventState} />
-                </div>
-            </fieldset>
+                        <fieldset-new-event>
+                            <div className="form-group">
+                                <label>Location: </label>
+                                    <input type="text" name="location" required autoFocus className="form-control"
+                                    value={currentEvent.location}
+                                    onChange={changeEventState} />
+                            </div>
+                        </fieldset-new-event>
 
-            <fieldset>
-                <div className="form-group">
-                    <label>Date of Event: </label>
-                    <br></br> Start Date: <input type="date" name="start_date"
-                        value={currentEvent.start_date}
-                        onChange={changeEventState} />
-                    <br></br>End Date:<input type="date" name="end_date"
-                    value={currentEvent.end_date}
-                    onChange={changeEventState} />
-                </div>
-            </fieldset>
+                        <fieldset-new-event>
+                            <div className="form-group-start_date-end_date">
+                                <label className="date-event">Date of Event: </label>
+                                    <br></br> 
+                                    <br></br>
+                                Start Date: <input type="date" name="start_date"
+                                value={currentEvent.start_date}
+                                onChange={changeEventState} />
+                                    <br></br>
+                                    <br></br>
+                                End Date: <input type="date" name="end_date"
+                                value={currentEvent.end_date}
+                                onChange={changeEventState} />
+                            </div>
+                        </fieldset-new-event>
 
-            <fieldset>
-                <div className="form-group">
-                    <label>Host's Name:</label>
-                    <input type="text" name="host" required autoFocus className="form-control"
-                        value={currentEvent.host}
-                        onChange={changeEventState} />
-                </div>
-            </fieldset>
+                        <fieldset-new-event>
+                            <div className="form-group">
+                                <label>Host's Name:</label>
+                                    <input type="text" name="host" required autoFocus className="form-control"
+                                    value={currentEvent.host}
+                                    onChange={changeEventState} />
+                            </div>
+                        </fieldset-new-event>
 
-            <fieldset>
-                <div className="form-group">
-                    <label>Description: </label>
-                    <textarea name="description" className="form-control"
-                        value={currentEvent.description}
-                        onChange={changeEventState} />
-                </div>
-            </fieldset>
+                        <fieldset-new-event>
+                            <div className="form-group">
+                                <label>Description: </label>
+                                    <textarea name="description" className="form-control" placeholder="Enter details of your event"
+                                    value={currentEvent.description}
+                                    onChange={changeEventState} />
+                            </div>
+                        </fieldset-new-event>
 
-            <fieldset>
-                <div className="form-group">
-                    <label>Total Price: </label>
-                    <span>$</span>
-                    <input type="text" name="price" required autoFocus className="form-control"
-                        value={currentEvent.price}
-                        onChange={changeEventState} />
-                </div>
-            </fieldset>
+                        <fieldset-new-event>
+                            <div className="form-group">
+                                <label>Total Price: </label>
+                                    <input type="text" name="price" placeholder="0.00" className="form-control"
+                                    value={currentEvent.price}
+                                    onChange={changeEventState} />
+                            </div>
+                        </fieldset-new-event>
 
-            <fieldset>
-                <div className="form-group">
-                    <label>Activity Level: </label>
-                    <input type="number" min="1" max="4" name="activity_level" required autoFocus className="form-control"
-                        value={currentEvent.activity_level}
-                        onChange={changeEventState} />
-                </div>
-            </fieldset>
+                        <fieldset-new-event>
+                            <div className="form-group">
+                                <label>Activity Level: </label>
+                                    <input type="number" min="1" max="4" name="activity_level" required autoFocus className="form-control"
+                                    value={currentEvent.activity_level}
+                                    onChange={changeEventState} />
+                            </div>
+                        </fieldset-new-event>
 
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="event_image_url">Image url: </label>
-                    <input type="file" id="url_image" onChange={createEventUrlImageString} />
-                    
-                </div>
-            </fieldset>
-            
+                        <fieldset-new-event>
+                            <div className="form-group">
+                                <label htmlFor="event_image_url">Upload Photo: </label>
+                                    <input type="file" id="url_image" onChange={createEventUrlImageString} />  
+                            </div>
+                        </fieldset-new-event>
+
             <div className="field">
               <div className="control">
+                <div className="event-buttons">
                 <button type="submit"
                   onClick={evt => {
                     evt.preventDefault()
@@ -144,9 +146,13 @@ export const NewEvent = () => {
                         .then(()=> navigate('/events'))
                 }}
                   className="save-button">Save Event</button>
-                  <button className="cancel" onClick={() => navigate('/events')}>Cancel</button>
-            </div>
-            </div>
+                  <button className="cancel-event" onClick={() => navigate('/events')}>Cancel</button>
+                  </div>
+                  </div>
+                </div>
+                </div>
+            </section>
         </form>
+        </>
     )
 }

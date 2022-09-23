@@ -6,7 +6,7 @@ body {
 .event-title {
     text-align: center;
     margin-top: 5rem;
-    color: #320351;
+    color: #541b7a;
     font-size: 35px
 }
 
@@ -26,18 +26,15 @@ body {
 .card {
     margin: 20px;
     margin-top: 50px;
-    /* background-color: rgb(13, 200, 237); */
     border-radius: 10px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
     width: 400px;
-    padding: 15px;
+    padding: 35px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
-img {
-    height: 350px;
-    width: auto;
+.event-image {
+    height: 300px;
+    width: 350px;
     margin-top: 1rem;
 }
 
@@ -97,7 +94,7 @@ p {
 
 .create-event-btn {
     background-color: #5151f8;
-    border-radius: 200px;
+    border-radius: 10px;
     border-color: #5151f8;
     display: flex;
     align-items: center;
@@ -105,24 +102,27 @@ p {
     color: #FFFFFF;
     cursor: pointer;
     font-size: 14px;
-    padding: 5px 10px;
     height: 2rem;
     width: 8rem;
-    margin-left: 4.4rem;
+    margin: auto;
     margin-top: 4rem;
-    font-weight: bold;
+    cursor: pointer;
 }
 
 .delete-event-btn {
     color: black;
-    float: right;
-    margin-right: 1rem;
+    /* position: relative; */
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
 .edit-icon {
     color: black;
-    float: left;
-    margin-left: 1rem;
+    /* position: relative; */
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
 .vertical-level-crop {

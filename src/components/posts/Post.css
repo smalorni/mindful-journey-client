@@ -19,17 +19,34 @@ body {
     margin: auto;
     margin-top: 4rem;
     border-radius: 10px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-    /* overflow: hidden; */
     width: 800px;
     padding: 20px 50px 30px 50px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    color: #100f0f;
+}
+
+.comment-card {
+    margin: auto;
+    margin-top: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    width: 800px;
+    padding: 20px 50px 30px 50px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-bottom: 9rem;
+    color: #100f0f;
 }
 
 .post__image {
     text-align: center;
     height: 350px;
     width: auto;
+}
+
+.post-image {
+    height: 350px;
+    width: auto;
+    margin-top: 1rem;
 }
 
 .post-title {
@@ -52,6 +69,76 @@ body {
 .content-container {
     margin-top: 2rem;
 }
+
+.post__category {
+    text-align: center;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid  #5151f8;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.commenters {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+button.add-comment-btn {
+    background-color: #5151f8;
+    border-color: #5151f8;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    height: 2rem;
+    width: 8rem;
+    margin: auto;
+}
+
+button.edit-comment-btn, .delete-comment-btn, .post-edit-btn,.delete-post-btn  {
+    border: none;
+    background: none;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    
+}
+
+.create-post-btn {
+    background-color: #5151f8;
+    border-color: #5151f8;
+    border-radius: 10px;
+    color: #FFFFFF;
+    height: 2rem;
+    width: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-size: 14px;
+    margin-top: 4rem;
+    cursor: pointer;
+}
+
+
+
+.intro {
+    /* text-align: left; */
+    color: #4f4e4e;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+    padding: 20px 0 0;
+}
+
+
+
 
 
 

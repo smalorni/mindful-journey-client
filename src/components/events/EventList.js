@@ -35,7 +35,7 @@ export const EventList = () => {
                     return <section key={`event--${event.id}`} className="events-list-container">
                         <div className="card">
                         <div div className="event__image-header">
-                            <img src={`http://localhost:8000${event.event_image_url}`} alt={event.name} />
+                            <img className="event-image" src={`http://localhost:8000${event.event_image_url}`} alt={event.name} />
                         </div>
                         
                         <div className="event-list">
@@ -75,6 +75,7 @@ export const EventList = () => {
                             .then(()=>getAllEvents())
                             .then(setCurrentEvents)
                             }}}><DeleteIcon/></button>
+
                         </>
                         : 
                         ""

@@ -11,9 +11,7 @@ export const HomePage = () => {
       <div class="text_overlay">
         <div class="container">
         <h1 className="homepage_title">Meditation Made Simple</h1>
-          <p>Join our meditation community to find the perfect retreats for you.</p>
-          <p>Connect with others who focus on improving mind, body and soul. </p>
-        
+          <p>Join our meditation community to find the perfect retreats for you and connect with others who focus on improving mind, body and soul.</p>
         </div>
       </div>
     </section> 

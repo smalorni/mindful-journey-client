@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { getAllCategories } from "../../managers/CategoryManager"
 import { getSinglePost, updateThePost } from "../../managers/PostManager"
+import "./UpdatePost.css"
 
 export const UpdatePost = () => {
     const [ currentCategories, setCurrentCategories ] = useState([])
@@ -53,19 +54,23 @@ export const UpdatePost = () => {
 
 
     return (
-        <form className="newPostForm">
-            <h2 className="newPostForm__header">New Post</h2>
+        <>
+        <h2 className="updatePostForm__title">Update Post</h2>
+        <form className="updatePostForm">
+            <section className="update-post-container">
+                <div className="post-box">
             
-            <fieldset>
-                <div className="form-group">
+            
+            <fieldset-updatePost>
+                <div className="form-group-title">
                     <label>Title: </label>
                     <input type="text" name="title" required autoFocus className="form-control"
                         value={updatePost.title}
                         onChange={updatePostState} />
                 </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
+            </fieldset-updatePost>
+            <fieldset-updatePost>
+                <div className="form-group-category">
                     <label htmlFor="category">Post Category: </label>
                     <select value={updatePost.category} name="category"
                         onChange={updatePostState} >
@@ -78,28 +83,29 @@ export const UpdatePost = () => {
                             }
                     </select>
                 </div>
-            </fieldset>
+            </fieldset-updatePost>
 
             {/* TODO: create the rest of the input fields */}
-            <fieldset>
+            <fieldset-updatePost>
                 <div className="form-group">
                     <label>Content: </label>
                     <textarea name="content" className="content"
                         value={updatePost.content}
                         onChange={updatePostState} />
                 </div>
-            </fieldset>
+            </fieldset-updatePost>
 
-            <fieldset>
+            <fieldset-updatePost>
                 <div className="form-group">
-                    <label htmlFor="image_url">Image url: </label>
+                    <label htmlFor="image_url">Upload Photo: </label>
                     <input type="file" id="url_image" onChange={updatePostUrlImageString} />
                     
                 </div>
-            </fieldset>
+            </fieldset-updatePost>
             
             <div className="field">
               <div className="control">
+                <div className="post-buttons">
                 <button type="submit"
                   onClick={evt => {
                     evt.preventDefault()
@@ -116,9 +122,13 @@ export const UpdatePost = () => {
                         .then(()=> navigate('/posts'))
                 }}
                   className="update-button">Update</button>
-                  <button className="cancel" onClick={() => navigate('/posts')}>Cancel</button>
+                  <button className="cancel-post" onClick={() => navigate('/posts')}>Cancel</button>
+                  </div>
             </div>
             </div>
+            </div>
+            </section>
         </form>
+        </>
     )
 }

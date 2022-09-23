@@ -2,6 +2,7 @@ import { getSinglePostComment, updatePostComment } from "../../managers/PostComm
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
+import "./EditComment.css"
 
 export const EditComment = () => {
   const { commentId } = useParams()
@@ -33,36 +34,39 @@ export const EditComment = () => {
   }
 
   return (
+    <>
+    <h2 className="comment-title">Update Comment</h2>
     <form className="commentForm">
       <div className="comment_card">
-      <h2 className="title">Update Comment</h2>
-        <div className="card-content">
+      
 
-          <fieldset>
-            <div className="form-group">
-            <label>Comment:</label>
-              <div className="control">
-              <textarea className="input" required autoFocus
+          <fieldset-update-comment>
+            <div className="form-group-comment">
+            <label className="comment">Comment:</label>
+              <div className="comment-control">
+              <textarea className="comment-input" required autoFocus
                 value={updateComment.comment}
                 name = "comment"
                 onChange={handleUpdate } />
               </div>
             </div>
-          </fieldset>
+          </fieldset-update-comment>
 
 
           <div className="field is-grouped">
             <div className="control">
+              <div className="comment-buttons">
               <button
                 onClick={handleSave}
-                className="button is-success">
+                className="comment-button">
                 Update
               </button>
-              <button className="cancel" onClick={() => navigate('/posts')}>Cancel</button>
+              <button className="cancel-comment" onClick={() => navigate('/posts')}>Cancel</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </form>
+    </>
   )
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { getAllCategories } from "../../managers/CategoryManager"
 import { createPost } from "../../managers/PostManager"
+import "./NewPost.css"
 
 export const NewPost = () => {
     const [ postCategories, setPostCategories ] = useState([])
@@ -41,19 +42,23 @@ export const NewPost = () => {
     }
 
     return (
+        <>
+        <h2 className="newPostForm-title">New Post</h2>
         <form className="newPostForm">
-            <h2 className="newPostForm__title">New Post</h2>
+            <section className="new-post-container">
+                <div className="post-box">
             
-            <fieldset>
-                <div className="form-group">
+            
+            <fieldset-new-post>
+                <div className="form-group-title">
                     <label>Title: </label>
                     <input type="text" name="title" required autoFocus className="form-control"
                         value={currentPost.title}
                         onChange={changePostState} />
                 </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
+            </fieldset-new-post>
+            <fieldset-new-post>
+                <div className="form-group-category">
                     <label htmlFor="category">Post Category: </label>
                     <select name="category"
                         onChange={changePostState} >
@@ -66,28 +71,29 @@ export const NewPost = () => {
                             }
                     </select>
                 </div>
-            </fieldset>
+            </fieldset-new-post>
 
             {/* TODO: create the rest of the input fields */}
-            <fieldset>
+            <fieldset-new-post>
                 <div className="form-group">
                     <label>Content: </label>
                     <textarea name="content" className="content"
                         value={currentPost.content}
                         onChange={changePostState} />
                 </div>
-            </fieldset>
+            </fieldset-new-post>
 
-            <fieldset>
+            <fieldset-new-post>
                 <div className="form-group">
-                    <label htmlFor="image_url">Image url: </label>
+                    <label htmlFor="image_url">Upload Photo: </label>
                     <input type="file" id="url_image" onChange={createPostUrlImageString} />
                     
                 </div>
-            </fieldset>
+            </fieldset-new-post>
             
             <div className="field">
               <div className="control">
+                <div className="post-buttons">
                 <button type="submit"
                   onClick={evt => {
                     evt.preventDefault()
@@ -104,9 +110,13 @@ export const NewPost = () => {
                         .then(()=> navigate('/posts'))
                 }}
                   className="save-button">Save Post</button>
-                  <button className="cancel" onClick={() => navigate('/posts')}>Cancel</button>
+                  <button className="cancel-post" onClick={() => navigate('/posts')}>Cancel</button>
             </div>
             </div>
+            </div>
+            </div>
+            </section>
         </form>
+        </>
     )
 }

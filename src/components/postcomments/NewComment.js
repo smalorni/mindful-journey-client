@@ -2,6 +2,7 @@ import { newPostComment } from "../../managers/PostCommentManager"
 import { useState } from "react"
 import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
+import "./NewComment.js"
 
 export const NewComment = () => {
   const { postId } = useParams()
@@ -26,36 +27,38 @@ export const NewComment = () => {
   }
 
   return (
+    <>
+    <h2 className="comment-title">Add New Comment</h2>
     <form className="commentForm">
       <div className="comment_card">
-      <h2 className="title">Add A New Comment</h2>
-        <div className="card-content">
-
-          <fieldset>
-            <div className="form-group">
-            <label>Comment:</label>
-              <div className="control">
-              <textarea className="input" required autoFocus
+      
+          <fieldset-new-comment>
+            <div className="form-group-comment">
+            <label className="comment">Comment:</label>
+              <div className="comment-control">
+              <textarea className="comment-input" required autoFocus
                 value={postComment.comment}
                 name = "comment"
                 onChange={handleUpdate } />
               </div>
             </div>
-          </fieldset>
+          </fieldset-new-comment>
 
 
           <div className="field is-grouped">
             <div className="control">
+              <div class="comment-buttons">
               <button
                 onClick={handleSave}
-                className="button is-success">
+                className="comment-button">
                 Save
               </button>
-              <button className="cancel" onClick={() => navigate('/posts')}>Cancel</button>
+              <button className="cancel-comment" onClick={() => navigate('/posts')}>Cancel</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </form>
+    </>
   )
 }
