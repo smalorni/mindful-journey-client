@@ -1,0 +1,68 @@
+.newEventForm {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.new-event-container {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.event-box {
+    margin-top: 50px;
+    border-radius: 10px;
+    width: 500px;
+    padding: 50px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-bottom: 1rem;
+}
+
+.newEventForm__title {
+    text-align: center;
+    margin-top: 5rem;
+    color: #541b7a;
+    font-size: 35px
+}
+
+div.form-group {
+    margin-bottom: 1.5rem;
+}
+
+div.form-group-start_date-end_date {
+    padding-bottom: 1.5rem;
+    text-align: left;
+}
+
+label.date-event {
+    margin-bottom: 5rem;
+}
+
+textarea.form-control {
+    width: 25rem;
+    height: 15rem;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+input.form-control {
+    width: 25rem;
+    font-size: 14px;
+}
+
+.save-button, .cancel-event {
+    background: #5151f8;
+    border-radius: 5px;
+    border-color: #5151f8;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    height: 2rem;
+    width: 6rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+}

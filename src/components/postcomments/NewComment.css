@@ -1,0 +1,60 @@
+.comment-title {
+    text-align: center;
+    color: #541b7a;
+    font-size: 35px;
+    margin-top: 5rem;
+}
+
+.commentForm {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    flex-wrap: wrap;
+}
+
+.comment_card {
+    margin: auto;
+    margin-top: -2rem;
+    border-radius: 10px;
+    width: 800px;
+    padding: 20px 50px 30px 50px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-bottom: 9rem;
+    color: #100f0f;
+}
+
+.comment-input {
+    width: 40rem;
+    height: 15rem;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14px;
+    border-radius: 10px;
+    margin-top: 1rem;
+    padding: 1rem;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.comment-control {
+    text-align: center;
+}
+
+.comment {
+    margin-left: 2rem;
+}
+
+.comment-buttons {
+    text-align: center;
+}
+
+.comment-button, .cancel-comment {
+    background: #5151f8;
+    border-radius: 5px;
+    border-color: #5151f8;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    height: 2rem;
+    width: 6rem;
+}
+
