@@ -8,19 +8,20 @@
     max-width: 100%; 
     display: block; 
     height: auto;
-    width: 45rem;
+    width: 40rem;
     float: right;
-    margin-top: -4rem;
+    margin-right: 3rem;
 } 
 
 .homepage_title  {
-    font-size: 5rem;
-    color: #320351
+    font-size: 6rem;
+    color: #320351;
+    margin-top: 3rem;
     
 }
 .text_overlay {
     display: block;
-    height: 100%;
+    height: 90%;
     width: 600px;
     margin-left: 5rem;
   }
@@ -32,8 +33,12 @@
   
   .text_overlay .container > * {
     margin-bottom: 1rem;
-    margin-left: 1rem;
-  }
+    /* margin-left: 1rem; */
+  } 
 
+  .meditation-intro {
+    font-size: 16px;
+    margin-top: 3rem;
+  }
 
   
