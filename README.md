@@ -8,8 +8,8 @@ The inspiration behind this idea occurred when I was getting a haircut and my ha
 
 ## Features
 <p>
-* User can register to create an account or log in
-* User can create, edit or delete own event
+*User can register to create an account or log in
+*User can create, edit or delete own event
 * User can create, edit or delete own post
 * User can add a comment on another user's post
 * User can edit or delete own comment
