@@ -1,4 +1,4 @@
-<img src="public/Images/Female-Meditator-Blue-Background.jpeg" width="200" height="200"/>
+<img src="public/Images/Journey-Logo.png" width="200" height="200"/>
 
 ## What is Mindful Journey?
 
