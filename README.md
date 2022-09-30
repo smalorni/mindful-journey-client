@@ -2,9 +2,20 @@
 
 ## What is Mindful Journey?
 
-It is full-stack social networking application for people who enjoys meditation, yoga or other wellness-activities related to mind, body and soul. The app helps people be better informed of retreats or similar events available in the United States. It also allows users to connect with like-minded individuals in a supportive and safe online environment. 
+It is full-stack social networking application for people who enjoy meditation, yoga or other wellness-activities related to mind, body and soul. The app helps people be better informed of retreats or similar events available in the United States. It also allows users to connect with like-minded individuals in a supportive and safe online environment. 
 
 The inspiration behind this idea occurred when I was getting a haircut and my hairstylist told me that she went to Sedona, Arizona for a week-long, all-women yoga retreat. She returned back to Michigan refreshed and stayed connected with the women she met. I asked her how she found out about the retreat and she told me through a friend who heard it through word of mouth. After some research on Google, I learned there was not an application or a website where people could find a list of events. You had to google for a specific retreat or event. I created Mindful Journey as a solution to streamline the process and make it easier for all the events to be found. I also wanted to create a positive, encouraging and safe online environment where people can find information and the support they need.  I am a supporter of mental health and believe it is critical for individuals to take care of themselves, not only physically, but emotionally as well. In our society, we tend to be so busy in our lives that we unintentionally neglect ourselves. Please feel free to watch the demo of Mindful Journey below.👇
+
+## Features
+<p>
+* User can register to create an account or log in
+* User can create, edit or delete own event
+* User can create, edit or delete own post
+* User can add a comment on another user's post
+* User can edit or delete own comment
+* User can click on a button to show that user is attending the event or not attending the event
+* User cannot edit or delete another's person comment, post or event
+* Homepage included
 
 ## Demo
 <div>
