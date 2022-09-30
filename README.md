@@ -16,6 +16,7 @@ The inspiration behind this idea occurred when I was getting a haircut and my ha
 * User can click on a button to show that user is attending the event or not attending the event
 * User cannot edit or delete another's person comment, post or event
 * Homepage included
+</p>
 
 ## Demo
 <div>
