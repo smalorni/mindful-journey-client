@@ -1,5 +1,10 @@
 <img src="public/Images/Journey-Logo.png" width="200" height="200"/>
 
+## Demo
+<div>
+<p>https://youtu.be/PHxJugLK1pw</p>
+<div>
+
 ## What is Mindful Journey?
 
 It is full-stack social networking application for people who enjoy meditation, yoga or other wellness-activities related to mind, body and soul. The app helps people be better informed of retreats or similar events available in the United States. It also allows users to connect with like-minded individuals in a supportive and safe online environment. 
@@ -17,11 +22,6 @@ The inspiration behind this idea occurred when I was getting a haircut and my ha
 * User cannot edit or delete another user's comment, post or event
 * Homepage included
 
-
-## Demo
-<div>
-<p>https://youtu.be/PHxJugLK1pw</p>
-<div>
 
 ## Languages and Tools
 <p>Front-End: React, CSS and Material UI</p>
