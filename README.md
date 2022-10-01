@@ -21,6 +21,8 @@ The inspiration behind this idea occurred when I was getting a haircut and my ha
 * User can click on a button to show that user is attending the event or not attending the event
 * User cannot edit or delete another user's comment, post or event
 * Homepage included
+* Events are sorted by dates in chronological order
+* Posts are sorted by dates of when user created the post
 
 
 ## Tech Stack
