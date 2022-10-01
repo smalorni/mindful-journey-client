@@ -14,15 +14,13 @@ body {
     display: flex;
     flex-direction: row;
     margin-left: 2rem;
-    flex-wrap: wrap;
-    
+    flex-wrap: wrap; 
 }
 
 .events-list-container {
     display: flex;
     justify-content: space-evenly;
     text-align: center;
-    margin: 0;
 }
 
 .card {
@@ -121,7 +119,6 @@ p {
 
 .edit-icon {
     color: black;
-    /* position: relative; */
     border: none;
     background: none;
     cursor: pointer;

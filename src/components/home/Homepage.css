@@ -10,7 +10,7 @@
     height: auto;
     width: 40rem;
     float: right;
-    margin-right: 3rem;
+    margin-right: 6rem;
 } 
 
 .homepage_title  {
@@ -33,7 +33,6 @@
   
   .text_overlay .container > * {
     margin-bottom: 1rem;
-    /* margin-left: 1rem; */
   } 
 
   .meditation-intro {

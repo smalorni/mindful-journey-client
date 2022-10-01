@@ -20,7 +20,7 @@ export const ApplicationViews = () => {
             <Route path="/register" element={ <Register />} />
             <Route element={ <Authorized />} >
 
-                <Route path="/home" element={ <HomePage />} />
+                <Route path="/" element={ <HomePage />} />
                 
                 <Route path="/posts" element={ <PostList />} />
                 <Route path="/posts/update/:postId" element={ <UpdatePost />} />
