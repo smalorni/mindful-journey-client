@@ -1,7 +1,7 @@
 <img src="public/Images/Journey-Logo.png" width="200" height="200"/>
 
 ## Demo
-Please feel free to watch the demo of Mindful Journey below.👇
+👇 Please feel free to watch the demo of Mindful Journey below.
 <p>https://youtu.be/PHxJugLK1pw</p>
 
 
