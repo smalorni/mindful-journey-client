@@ -26,7 +26,7 @@ The inspiration behind this idea occurred when I was getting a haircut and my ha
 
 
 ## Tech Stack
-<p>Front-End: React, CSS and Material UI</p>
+<p>Front-End: Javascript/React, CSS and Material UI</p>
 <p>Back-End: Python/Django</p>
 
 
