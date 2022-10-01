@@ -2,7 +2,7 @@
 
 ## Demo
 Please feel free to watch the demo of Mindful Journey below.👇
-https://youtu.be/PHxJugLK1pw
+<p>https://youtu.be/PHxJugLK1pw</p>
 
 
 ## What is Mindful Journey?
@@ -24,13 +24,13 @@ The inspiration behind this idea occurred when I was getting a haircut and my ha
 
 
 ## Tech Stack
-Front-End: React, CSS and Material UI
-Back-End: Python/Django
+<p>Front-End: React, CSS and Material UI</p>
+<p>Back-End: Python/Django</p>
 
 
 ## Installation
 1. Clone the repository: `git clone git@github.com:smalorni/mindful-journey-client`
 2. cd into directory `mindful-journey-client`
 3. Follow server-side instructions for <a href="https://github.com/smalorni/mindful-journey-server" target="_blank">mindful-journey-server</a> to run server
-4. Return back to mindful-journey-client in terminal and `run npm install` in your terminal
+4. Return back to mindful-journey-client in terminal and run `npm install` in your terminal
 5. Run `npm start` and should see localhost:3000/login in browser
