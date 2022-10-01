@@ -1,15 +1,15 @@
 <img src="public/Images/Journey-Logo.png" width="200" height="200"/>
 
 ## Demo
-<div>
-<p>https://youtu.be/PHxJugLK1pw</p>
-<div>
+Please feel free to watch the demo of Mindful Journey below.👇
+https://youtu.be/PHxJugLK1pw
+
 
 ## What is Mindful Journey?
 
 It is full-stack social networking application for people who enjoy meditation, yoga or other wellness-activities related to mind, body and soul. The app helps people be better informed of retreats or similar events available in the United States. It also allows users to connect with like-minded individuals in a supportive and safe online environment. 
 
-The inspiration behind this idea occurred when I was getting a haircut and my hairstylist told me that she went to Sedona, Arizona for a week-long, all-women yoga retreat. She returned back to Michigan refreshed and stayed connected with the women she met. I asked her how she found out about the retreat and she told me through a friend who heard it through word of mouth. After some research on Google, I learned there was not an application or a website where people could find a list of events. You had to google for a specific retreat or event. I created Mindful Journey as a solution to streamline the process and make it easier for all the events to be found. I also wanted to create a positive, encouraging and safe online environment where people can find information and the support they need.  I am a supporter of mental health and believe it is critical for individuals to take care of themselves, not only physically, but emotionally as well. In our society, we tend to be so busy in our lives that we unintentionally neglect ourselves. Please feel free to watch the demo of Mindful Journey below.👇
+The inspiration behind this idea occurred when I was getting a haircut and my hairstylist told me that she went to Sedona, Arizona for a week-long, all-women yoga retreat. She returned back to Michigan refreshed and stayed connected with the women she met. I asked her how she found out about the retreat and she told me through a friend who heard it through word of mouth. After some research on Google, I learned there was not an application or a website where people could find a list of events. You had to google for a specific retreat or event. I created Mindful Journey as a solution to streamline the process and make it easier for all the events to be found. I also wanted to create a positive, encouraging and safe online environment where people can find information and the support they need.  I am a supporter of mental health and believe it is critical for individuals to take care of themselves, not only physically, but emotionally as well. In our society, we tend to be so busy in our lives that we unintentionally neglect ourselves.
 
 ## Features
 
@@ -29,7 +29,7 @@ The inspiration behind this idea occurred when I was getting a haircut and my ha
 
 
 ## Installation
-1. Clone the repository: <code>git clone git@github.com:smalorni/mindful-journey-client</code>
+1. Clone the repository: <code>[git clone git@github.com:smalorni/mindful-journey-client]</code>
 2. cd into directory <code>mindful-journey-client</code>
 3. Follow server-side instructions for <a href="https://github.com/smalorni/mindful-journey-server" target="_blank">mindful-journey-server</a> to run server
 4. Return back to mindful-journey-client in terminal and <code>run npm install</code> in your terminal
