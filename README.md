@@ -30,7 +30,7 @@ The inspiration behind this idea occurred when I was getting a haircut and my ha
 
 ## Installation
 1. Clone the repository: <code>git clone git@github.com:smalorni/mindful-journey-client.git</code>
-2. cd into directory mindful-journey-client
+2. cd into directory <code>mindful-journey-client</code>
 3. Follow server-side instructions for <a href="https://github.com/smalorni/mindful-journey-server" target="_blank">mindful-journey-server</a> to run server
-4. Return back to mindful-journey-client in terminal and run npm install in your terminal
-5. Run npm start and should see http://localhost:3000/login in browser
+4. Return back to mindful-journey-client in terminal and <code>run npm install</code> in your terminal
+5. Run npm start and should see <code>localhost:3000/login</code>in browser
