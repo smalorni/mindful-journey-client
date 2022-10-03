@@ -78,3 +78,12 @@ export const attendEvent = (eventId) => {
     })
   }
  
+//search events by location, description from list on server side
+export const getSearchEvents = (search) => {
+    return fetch(`http://localhost:8000/events?search=${search}`, {
+        headers: {
+            'Authorization': `Token ${localStorage.getItem("meditator_token")}`,
+        }
+    })
+        .then(response => response.json())
+}

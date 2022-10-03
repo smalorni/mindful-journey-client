@@ -130,5 +130,14 @@ p {
     margin-top: -0.2rem;
 }
 
+.search-input {
+  height: 1.5rem;
+  width: 15rem;
+  border-radius: 5px;
+  border: #5151f8 2px solid;
+  margin-left: 4rem;
+  padding-left: 5px;
+}
+
 
 

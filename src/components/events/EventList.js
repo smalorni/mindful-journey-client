@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { getAllEvents, deleteEvent, attendEvent, leaveEvent } from "../../managers/EventManager"
+import { getAllEvents, deleteEvent, attendEvent, leaveEvent, getSearchEvents } from "../../managers/EventManager"
 import "./Event.css"
+//Material UI
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -11,27 +12,59 @@ import AddIcon from '@mui/icons-material/Add';
 
 //Goal: A list of events can be viewed
 export const EventList = () => {
-    const [ currentEvents, setCurrentEvents ] = useState([])
-    const navigate = useNavigate()
+    const [ currentEvents, setCurrentEvents ] = useState([]);
+    const navigate = useNavigate();
+    //Filter search by location, description
+    const [ searchTerm, setSearchTerm ] = useState("")
+    const [ filteredEvents, setFilteredEvents ] = useState([])
 
     //Fetch all events
     const fetchEvents = () => getAllEvents().then(data => setCurrentEvents(data))
 
     //Use effect
     useEffect(() => {
-        fetchEvents() 
+        fetchEvents()
     }, 
     [])
+
+    //Use effect for search-filter
+    useEffect(
+        () => {
+            if (searchTerm !== "") {
+                getSearchEvents(searchTerm).then(data => setFilteredEvents(data))
+            }
+            else {
+                setFilteredEvents(currentEvents)
+            }
+        },
+        [ currentEvents, searchTerm]
+    )
 
     //map using initial state variable above
     return <>
         <h1 className="event-title">Discover the Perfect Retreat for You</h1>
         <button className="create-event-btn"
                 onClick={() => navigate(`/events/new`)}><AddIcon/>New Event</button>
+
+            <div>
+                <input className="search-input" 
+                type="text"
+                placeholder="Search Events"
+                onChange={
+                    (changeEvent) => {
+                        let search = changeEvent.target.value
+                        setSearchTerm(search)
+                    }   
+                }
+                />
+            </div>
+            
+
+
             <article className="events">
             
             {
-                currentEvents.map(event => {
+                filteredEvents.map(event => {
                     return <section key={`event--${event.id}`} className="events-list-container">
                         <div className="card">
                         <div div className="event__image-header">
@@ -80,7 +113,6 @@ export const EventList = () => {
                         : 
                         ""
                     }
-                   
 
                     </div>
                 </section>
