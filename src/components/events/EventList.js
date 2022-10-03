@@ -37,7 +37,7 @@ export const EventList = () => {
                 setFilteredEvents(currentEvents)
             }
         },
-        [ currentEvents, searchTerm]
+        [currentEvents, searchTerm]
     )
 
     //map using initial state variable above
