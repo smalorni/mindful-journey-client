@@ -44,7 +44,9 @@ The inspiration behind this idea occurred when I was getting a haircut and my ha
 ![ERD](/public/Images/Mindful%20Journey-ERD.png)
 
 ## Figma Wireframe
-Link to Figma Wireframe - https://www.figma.com/file/gyP9pSWC0y2qtedlLRrG5r/Mindful-Journey---Retreat-Wireframes?node-id=0%3A1
+Link to Figma Wireframe 👇
+https://www.figma.com/file/gyP9pSWC0y2qtedlLRrG5r/Mindful-Journey---Retreat-Wireframes?node-id=0%3A1
+
 ![Wireframe-Login](/public/Images/Login-Register-Homepage.png)
 ![Wireframe-Events](/public/Images/Events.png)
 ![Wireframe-Search](/public/Images/Search.png)
