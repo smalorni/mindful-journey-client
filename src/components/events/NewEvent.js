@@ -145,7 +145,7 @@ export const NewEvent = () => {
                     createEvent(newEvent)
                         .then(()=> navigate('/events'))
                 }}
-                  className="save-button">Save Event</button>
+                  className="save-button">Post Event</button>
                   <button className="cancel-event" onClick={() => navigate('/events')}>Cancel</button>
                   </div>
                   </div>

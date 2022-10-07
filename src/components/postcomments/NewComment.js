@@ -51,7 +51,7 @@ export const NewComment = () => {
               <button
                 onClick={handleSave}
                 className="comment-button">
-                Save
+                Post
               </button>
               <button className="cancel-comment" onClick={() => navigate('/posts')}>Cancel</button>
               </div>

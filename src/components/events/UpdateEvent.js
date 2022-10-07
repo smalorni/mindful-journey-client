@@ -153,7 +153,7 @@ export const UpdateEvent = () => {
                     updateTheEvent(newEvent, eventId)
                         .then(()=> navigate('/events'))
                 }}
-                  className="save-button">Save Event</button>
+                  className="save-button">Update Event</button>
                   <button className="cancel-event" onClick={() => navigate('/events')}>Cancel</button>
                   </div>
                 </div>
