@@ -27,11 +27,13 @@ The inspiration behind this idea occurred when I was getting a haircut and my ha
 
 
 ## Tech Stack
+
 <p>Front-End: Javascript/React, CSS and Material UI</p>
 <p>Back-End: Python/Django</p>
 
 
 ## Installation
+
 1. Clone the repository: `git clone git@github.com:smalorni/mindful-journey-client`
 2. cd into directory `mindful-journey-client`
 3. Follow server-side instructions for <a href="https://github.com/smalorni/mindful-journey-server" target="_blank">mindful-journey-server</a> to run server
@@ -39,4 +41,12 @@ The inspiration behind this idea occurred when I was getting a haircut and my ha
 5. Run `npm start` and you should see localhost:3000/login in browser
 
 ## ERD
-https://drawsql.app/teams/wanderlust-code/diagrams/retreat/embed
+![ERD](/public/Images/Mindful%20Journey-ERD.png)
+
+## Figma Wireframe
+Link to Figma Wireframe - https://www.figma.com/file/gyP9pSWC0y2qtedlLRrG5r/Mindful-Journey---Retreat-Wireframes?node-id=0%3A1
+![Wireframe-Login](/public/Images/Login-Register-Homepage.png)
+![Wireframe-Events](/public/Images/Events.png)
+![Wireframe-Search](/public/Images/Search.png)
+![Wireframe-Posts](/public/Images/Posts.png)
+![Wireframe-Post-Comments](/public/Images/Comments.png)
