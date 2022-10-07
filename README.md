@@ -39,4 +39,4 @@ The inspiration behind this idea occurred when I was getting a haircut and my ha
 5. Run `npm start` and you should see localhost:3000/login in browser
 
 ## ERD
-<iframe width="100%" height="500px" style="box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); border-radius:15px;" allowtransparency="true" allowfullscreen="true" scrolling="no" title="Embedded DrawSQL IFrame" frameborder="0" src="https://drawsql.app/teams/wanderlust-code/diagrams/retreat/embed"></iframe>
+https://drawsql.app/teams/wanderlust-code/diagrams/retreat/embed
