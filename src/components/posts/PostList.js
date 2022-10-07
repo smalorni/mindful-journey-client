@@ -17,8 +17,8 @@ export const PostList = () => {
     const [ posts, setPosts ] = useState([])
 
     const navigate = useNavigate()
-
-
+    
+    
     //Fetch all posts
     const allPosts = () => getAllPosts().then(data => setPosts(data))
 
@@ -35,13 +35,13 @@ export const PostList = () => {
         })
     }
 
-
+    
     return <>
             <h1 className="event-title"> Our Meditation Community</h1>
             <p className="intro"> We value diversity, equity and inclusion in our community and provide a safe, welcoming and supportive online environment for all meditators.</p>
             <button className="create-post-btn"
                 onClick={() => navigate(`/posts/new`)}><AddIcon/> New Post</button>
-            
+         
             <article className="posts">
             <div className="post-container">
             {
@@ -96,8 +96,8 @@ export const PostList = () => {
                             {parseInt(localStorage.getItem('user_id')) === post_comment.meditator.id ?
                             <>
                          
-                                <button className="delete-comment-btn" onClick={() => handleDelete(post_comment.id)}><DeleteIcon style={{ fontSize: 20 }}/></button>
                                 <button className="edit-comment-btn" onClick={() => navigate(`/posts/${post.id}/update/${post_comment.id}`)}><EditIcon style={{ fontSize: 20 }}/></button>
+                                <button className="delete-comment-btn" onClick={() => handleDelete(post_comment.id)}><DeleteIcon style={{ fontSize: 20 }}/></button>
                               
                             </>
                             : 
