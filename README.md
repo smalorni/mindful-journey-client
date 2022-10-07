@@ -20,9 +20,10 @@ The inspiration behind this idea occurred when I was getting a haircut and my ha
 * User can edit or delete own comment
 * User can click on a button to show that user is attending the event or not attending the event
 * User cannot edit or delete another user's comment, post or event
+* User can search for specific event(s) in search bar
 * Homepage included
 * Events are sorted by dates in chronological order
-* Posts are sorted by dates of when user created the post
+* Posts are sorted by dates of when user created the post - recent at top, oldest at bottom
 
 
 ## Tech Stack
@@ -36,3 +37,6 @@ The inspiration behind this idea occurred when I was getting a haircut and my ha
 3. Follow server-side instructions for <a href="https://github.com/smalorni/mindful-journey-server" target="_blank">mindful-journey-server</a> to run server
 4. Return back to mindful-journey-client in terminal and run `npm install`
 5. Run `npm start` and you should see localhost:3000/login in browser
+
+## ERD
+<iframe width="100%" height="500px" style="box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); border-radius:15px;" allowtransparency="true" allowfullscreen="true" scrolling="no" title="Embedded DrawSQL IFrame" frameborder="0" src="https://drawsql.app/teams/wanderlust-code/diagrams/retreat/embed"></iframe>
