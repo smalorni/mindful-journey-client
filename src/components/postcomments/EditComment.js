@@ -42,7 +42,7 @@ export const EditComment = () => {
 
           <fieldset-update-comment>
             <div className="form-group-comment">
-            <label className="comment">Comment:</label>
+            <label className="comment">Comment</label>
               <div className="comment-control">
               <textarea className="comment-input" required autoFocus
                 value={updateComment.comment}

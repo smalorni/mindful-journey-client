@@ -47,7 +47,7 @@ export const NewEvent = () => {
             
                         <fieldset-new-event>
                             <div className="form-group">
-                                <label>Name of Event: </label>
+                                <label>Name of Event </label>
                                     <input type="text" name="name" required autoFocus className="form-control"
                                     value={currentEvent.name}
                                     onChange={changeEventState} />
@@ -56,7 +56,7 @@ export const NewEvent = () => {
 
                         <fieldset-new-event>
                             <div className="form-group">
-                                <label>Location: </label>
+                                <label>Location </label>
                                     <input type="text" name="location" required autoFocus className="form-control"
                                     value={currentEvent.location}
                                     onChange={changeEventState} />
@@ -68,12 +68,12 @@ export const NewEvent = () => {
                                 <label className="date-event">Date of Event: </label>
                                     <br></br> 
                                     <br></br>
-                                Start Date: <input type="date" name="start_date"
+                                Start Date <input type="date" name="start_date"
                                 value={currentEvent.start_date}
                                 onChange={changeEventState} />
                                     <br></br>
                                     <br></br>
-                                End Date: <input type="date" name="end_date"
+                                End Date <input type="date" name="end_date"
                                 value={currentEvent.end_date}
                                 onChange={changeEventState} />
                             </div>
@@ -81,7 +81,7 @@ export const NewEvent = () => {
 
                         <fieldset-new-event>
                             <div className="form-group">
-                                <label>Host's Name:</label>
+                                <label>Host's Name</label>
                                     <input type="text" name="host" required autoFocus className="form-control"
                                     value={currentEvent.host}
                                     onChange={changeEventState} />
@@ -90,7 +90,7 @@ export const NewEvent = () => {
 
                         <fieldset-new-event>
                             <div className="form-group">
-                                <label>Description: </label>
+                                <label>Description </label>
                                     <textarea name="description" className="form-control" placeholder="Enter details of your event"
                                     value={currentEvent.description}
                                     onChange={changeEventState} />
@@ -99,7 +99,7 @@ export const NewEvent = () => {
 
                         <fieldset-new-event>
                             <div className="form-group">
-                                <label>Total Price: </label>
+                                <label>Total Price </label>
                                     <input type="text" name="price" placeholder="0.00" className="form-control"
                                     value={currentEvent.price}
                                     onChange={changeEventState} />
@@ -108,7 +108,7 @@ export const NewEvent = () => {
 
                         <fieldset-new-event>
                             <div className="form-group">
-                                <label>Activity Level: </label>
+                                <label>Activity Level </label>
                                     <input type="number" min="1" max="4" name="activity_level" required autoFocus className="form-control"
                                     value={currentEvent.activity_level}
                                     onChange={changeEventState} />
@@ -117,7 +117,7 @@ export const NewEvent = () => {
 
                         <fieldset-new-event>
                             <div className="form-group">
-                                <label htmlFor="event_image_url">Upload Photo: </label>
+                                <label htmlFor="event_image_url">Upload Photo </label>
                                     <input type="file" id="url_image" onChange={createEventUrlImageString} />  
                             </div>
                         </fieldset-new-event>

@@ -54,7 +54,7 @@ export const UpdateEvent = () => {
             
                         <fieldset-update-event>
                             <div className="form-group">
-                                <label>Name of Event: </label>
+                                <label>Name of Event </label>
                                     <input type="text" name="name" required autoFocus className="form-control"
                                     value={updateEvent.name}
                                     onChange={updateEventState} />
@@ -63,7 +63,7 @@ export const UpdateEvent = () => {
 
                         <fieldset-update-event>
                             <div className="form-group">
-                                <label>Location: </label>
+                                <label>Location </label>
                                     <input type="text" name="location" required autoFocus className="form-control"
                                     value={updateEvent.location}
                                     onChange={updateEventState} />
@@ -75,12 +75,12 @@ export const UpdateEvent = () => {
                                 <label>Date of Event: </label>
                                     <br></br>
                                     <br></br>
-                                Start Date: <input type="date" name="start_date"
+                                Start Date <input type="date" name="start_date"
                                 value={updateEvent.start_date}
                                 onChange={updateEventState} />
                                     <br></br>
                                     <br></br>
-                                End Date: <input type="date" name="end_date"
+                                End Date <input type="date" name="end_date"
                                 value={updateEvent.end_date}
                                 onChange={updateEventState} />
                             </div>
@@ -88,7 +88,7 @@ export const UpdateEvent = () => {
 
                         <fieldset-update-event>
                             <div className="form-group">
-                                <label>Host's Name: </label>
+                                <label>Host's Name </label>
                                     <input type="text" name="host" required autoFocus className="form-control"
                                     value={updateEvent.host}
                                     onChange={updateEventState} />
@@ -97,7 +97,7 @@ export const UpdateEvent = () => {
 
                         <fieldset-update-event>
                             <div className="form-group">
-                                <label>Description: </label>
+                                <label>Description </label>
                                     <textarea name="description" className="form-control"
                                     value={updateEvent.description}
                                     onChange={updateEventState} />
@@ -106,7 +106,7 @@ export const UpdateEvent = () => {
 
                         <fieldset-update-event>
                             <div className="form-group">
-                                <label>Total Price: </label>
+                                <label>Total Price </label>
                                     <input type="text" name="price" required autoFocus className="form-control"
                                     value={updateEvent.price}
                                     onChange={updateEventState} />
@@ -115,7 +115,7 @@ export const UpdateEvent = () => {
 
                         <fieldset-update-event>
                             <div className="form-group">
-                                <label>Activity Level: </label>
+                                <label>Activity Level </label>
                                     <input type="number" min="1" max="4" name="activity_level"
                                 className="form-control"
                                     value={updateEvent.activity_level}

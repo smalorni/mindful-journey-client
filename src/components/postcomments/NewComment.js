@@ -34,7 +34,7 @@ export const NewComment = () => {
       
           <fieldset-new-comment>
             <div className="form-group-comment">
-            <label className="comment">Comment:</label>
+            <label className="comment">Comment</label>
               <div className="comment-control">
               <textarea className="comment-input" required autoFocus
                 value={postComment.comment}

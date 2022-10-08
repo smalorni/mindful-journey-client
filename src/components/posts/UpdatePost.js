@@ -63,7 +63,7 @@ export const UpdatePost = () => {
             
             <fieldset-updatePost>
                 <div className="form-group-title">
-                    <label>Title: </label>
+                    <label>Title </label>
                     <input type="text" name="title" required autoFocus className="form-control"
                         value={updatePost.title}
                         onChange={updatePostState} />
@@ -71,7 +71,7 @@ export const UpdatePost = () => {
             </fieldset-updatePost>
             <fieldset-updatePost>
                 <div className="form-group-category">
-                    <label htmlFor="category">Post Category: </label>
+                    <label htmlFor="category">Post Category </label>
                     <select value={updatePost.category} name="category"
                         onChange={updatePostState} >
                             <option value="0">Select Category:</option>
@@ -88,7 +88,7 @@ export const UpdatePost = () => {
             {/* TODO: create the rest of the input fields */}
             <fieldset-updatePost>
                 <div className="form-group">
-                    <label>Content: </label>
+                    <label>Content </label>
                     <textarea name="content" className="content"
                         value={updatePost.content}
                         onChange={updatePostState} />
@@ -97,7 +97,7 @@ export const UpdatePost = () => {
 
             <fieldset-updatePost>
                 <div className="form-group">
-                    <label htmlFor="image_url">Upload Photo: </label>
+                    <label htmlFor="image_url">Upload Photo </label>
                     <input type="file" id="url_image" onChange={updatePostUrlImageString} />
                     
                 </div>

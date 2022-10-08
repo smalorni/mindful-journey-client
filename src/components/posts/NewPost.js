@@ -51,7 +51,7 @@ export const NewPost = () => {
             
             <fieldset-new-post>
                 <div className="form-group-title">
-                    <label>Title: </label>
+                    <label>Title </label>
                     <input type="text" name="title" required autoFocus className="form-control"
                         value={currentPost.title}
                         onChange={changePostState} />
@@ -59,7 +59,7 @@ export const NewPost = () => {
             </fieldset-new-post>
             <fieldset-new-post>
                 <div className="form-group-category">
-                    <label htmlFor="category">Post Category: </label>
+                    <label htmlFor="category">Post Category </label>
                     <select name="category"
                         onChange={changePostState} >
                             <option value="0">Select Category:</option>
@@ -76,7 +76,7 @@ export const NewPost = () => {
             {/* TODO: create the rest of the input fields */}
             <fieldset-new-post>
                 <div className="form-group">
-                    <label>Content: </label>
+                    <label>Content </label>
                     <textarea name="content" className="content"
                         value={currentPost.content}
                         onChange={changePostState} />
@@ -85,7 +85,7 @@ export const NewPost = () => {
 
             <fieldset-new-post>
                 <div className="form-group">
-                    <label htmlFor="image_url">Upload Photo: </label>
+                    <label htmlFor="image_url">Upload Photo </label>
                     <input type="file" id="url_image" onChange={createPostUrlImageString} />
                     
                 </div>
