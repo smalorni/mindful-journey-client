@@ -2,7 +2,7 @@
 
 ## Demo
 👇 Please feel free to watch the demo of Mindful Journey below.
-<p>https://youtu.be/PHxJugLK1pw</p>
+<p>https://youtu.be/yx1khv2iZvs</p>
 
 
 ## What is Mindful Journey?
